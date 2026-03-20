@@ -1,0 +1,18 @@
+{
+  "brand": "Abayas",
+  "nav": {
+    "home": "Home",
+    "collections": "Collections",
+    "products": "Products",
+    "quote": "Request a Quote",
+    "admin": "Admin"
+  },
+  "admin": {
+    "loginTitle": "Admin login",
+    "email": "Email",
+    "password": "Password",
+    "signIn": "Sign in",
+    "dashboard": "Dashboard"
+  }
+}
+

@@ -1,0 +1,23 @@
+{
+  "/[locale]/about/page": "app/[locale]/about/page.js",
+  "/[locale]/admin/dashboard/page": "app/[locale]/admin/dashboard/page.js",
+  "/[locale]/admin/login/page": "app/[locale]/admin/login/page.js",
+  "/[locale]/admin/products/new/page": "app/[locale]/admin/products/new/page.js",
+  "/[locale]/collections/[slug]/page": "app/[locale]/collections/[slug]/page.js",
+  "/[locale]/collections/page": "app/[locale]/collections/page.js",
+  "/[locale]/contact/page": "app/[locale]/contact/page.js",
+  "/[locale]/cookies/page": "app/[locale]/cookies/page.js",
+  "/[locale]/faq/page": "app/[locale]/faq/page.js",
+  "/[locale]/page": "app/[locale]/page.js",
+  "/[locale]/privacy/page": "app/[locale]/privacy/page.js",
+  "/[locale]/products/[slug]/page": "app/[locale]/products/[slug]/page.js",
+  "/[locale]/products/page": "app/[locale]/products/page.js",
+  "/[locale]/quote/page": "app/[locale]/quote/page.js",
+  "/[locale]/shipping-returns/page": "app/[locale]/shipping-returns/page.js",
+  "/[locale]/terms/page": "app/[locale]/terms/page.js",
+  "/_global-error/page": "app/_global-error/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/page": "app/page.js",
+  "/robots.txt/route": "app/robots.txt/route.js",
+  "/sitemap.xml/route": "app/sitemap.xml/route.js"
+}

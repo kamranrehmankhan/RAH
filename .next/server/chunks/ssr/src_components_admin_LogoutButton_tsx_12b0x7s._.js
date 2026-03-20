@@ -1,0 +1,3 @@
+module.exports=[63598,a=>{"use strict";var b=a.i(87924),c=a.i(50944),d=a.i(72131),e=a.i(66516);a.s(["default",0,function(){let a=(0,c.useRouter)(),[f,g]=(0,d.useState)(!1);async function h(){g(!0);try{let a=(0,e.createSupabaseBrowserClient)();await a.auth.signOut()}finally{a.refresh(),g(!1)}}return(0,b.jsx)("button",{type:"button",onClick:h,disabled:f,className:"rounded-md border border-slate-200 px-3 py-2 text-sm font-medium text-slate-900 hover:bg-slate-50 disabled:opacity-60 dark:border-slate-800 dark:text-slate-50 dark:hover:bg-slate-900",children:f?"Signing out…":"Sign out"})}])}];
+
+//# sourceMappingURL=src_components_admin_LogoutButton_tsx_12b0x7s._.js.map

@@ -1,0 +1,18 @@
+{
+  "brand": "Abayas",
+  "nav": {
+    "home": "Accueil",
+    "collections": "Collections",
+    "products": "Produits",
+    "quote": "Demander un devis",
+    "admin": "Administration"
+  },
+  "admin": {
+    "loginTitle": "Connexion admin",
+    "email": "E-mail",
+    "password": "Mot de passe",
+    "signIn": "Se connecter",
+    "dashboard": "Tableau de bord"
+  }
+}
+

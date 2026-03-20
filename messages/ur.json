@@ -1,0 +1,18 @@
+{
+  "brand": "عبایہ",
+  "nav": {
+    "home": "ہوم",
+    "collections": "مجموعے",
+    "products": "پروڈکٹس",
+    "quote": "کوٹ کی درخواست",
+    "admin": "ایڈمن"
+  },
+  "admin": {
+    "loginTitle": "ایڈمن لاگ اِن",
+    "email": "ای میل",
+    "password": "پاس ورڈ",
+    "signIn": "لاگ اِن",
+    "dashboard": "ڈیش بورڈ"
+  }
+}
+
