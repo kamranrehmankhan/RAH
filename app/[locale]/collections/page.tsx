@@ -18,7 +18,7 @@ export default async function CollectionsIndexPage({
   return (
     <main className="mx-auto max-w-6xl px-4 py-10">
       <h1 className="text-3xl font-semibold tracking-tight">Collections</h1>
-      <p className="mt-2 text-slate-600 dark:text-slate-300">
+      <p className="mt-2 text-pink-600 ">
         Browse by occasion and discover variant pricing for your perfect fit.
       </p>
 
@@ -27,10 +27,10 @@ export default async function CollectionsIndexPage({
           <a
             key={c.slug}
             href={`/${locale}/collections/${c.slug}`}
-            className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md dark:border-slate-800 dark:bg-slate-950"
+            className="rounded-xl border border-pink-100 bg-pink-50 p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md  "
           >
             <div className="text-lg font-semibold">{c.title}</div>
-            <div className="mt-2 text-sm text-slate-600 dark:text-slate-300">
+            <div className="mt-2 text-sm text-pink-600 ">
               Styles + pricing variants
             </div>
           </a>

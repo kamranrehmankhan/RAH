@@ -46,11 +46,11 @@ export default async function AdminLoginPage({
 
       <form className="mt-6 space-y-4" onSubmit={onSubmit}>
         <label className="block">
-          <span className="text-sm text-slate-600 dark:text-slate-300">
+          <span className="text-sm text-pink-600 ">
             {t('admin.email')}
           </span>
           <input
-            className="mt-1 w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-slate-900 outline-none focus:border-slate-400 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-50"
+            className="mt-1 w-full rounded-md border border-pink-200 bg-pink-50 px-3 py-2 text-pink-900 outline-none focus:border-slate-400   "
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             type="email"
@@ -60,11 +60,11 @@ export default async function AdminLoginPage({
         </label>
 
         <label className="block">
-          <span className="text-sm text-slate-600 dark:text-slate-300">
+          <span className="text-sm text-pink-600 ">
             {t('admin.password')}
           </span>
           <input
-            className="mt-1 w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-slate-900 outline-none focus:border-slate-400 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-50"
+            className="mt-1 w-full rounded-md border border-pink-200 bg-pink-50 px-3 py-2 text-pink-900 outline-none focus:border-slate-400   "
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             type="password"
@@ -74,13 +74,13 @@ export default async function AdminLoginPage({
         </label>
 
         {error ? (
-          <p className="rounded-md border border-red-300 bg-red-50 px-3 py-2 text-sm text-red-700 dark:border-red-900/40 dark:bg-red-900/20 dark:text-red-200">
+          <p className="rounded-md border border-red-300 bg-red-50 px-3 py-2 text-sm text-red-700   ">
             {error}
           </p>
         ) : null}
 
         <button
-          className="w-full rounded-md bg-slate-900 px-4 py-2 font-medium text-white hover:bg-slate-800 disabled:opacity-60 dark:bg-slate-50 dark:text-slate-900 dark:hover:bg-slate-200"
+          className="w-full rounded-md bg-pink-500 px-4 py-2 font-medium text-white hover:bg-pink-600 disabled:opacity-60   "
           disabled={isPending}
           type="submit"
         >

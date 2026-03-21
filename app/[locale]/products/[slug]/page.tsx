@@ -141,20 +141,20 @@ export default async function ProductPage({
           <h1 className="text-3xl font-semibold tracking-tight">
             {product.title}
           </h1>
-          <div className="mt-2 text-sm text-slate-600 dark:text-slate-300">
+          <div className="mt-2 text-sm text-pink-600 ">
             {product.category}
             {product.material ? ` • ${product.material}` : ''}
           </div>
-          <p className="mt-4 max-w-2xl text-slate-700 dark:text-slate-200">
+          <p className="mt-4 max-w-2xl text-slate-700 ">
             {product.description}
           </p>
         </div>
 
-        <div className="w-full max-w-sm rounded-xl border border-slate-200 bg-slate-50 p-4 dark:border-slate-800 dark:bg-slate-950">
+        <div className="w-full max-w-sm rounded-xl border border-pink-100 bg-pink-50 p-4  ">
           <div className="text-sm font-semibold">Variant pricing</div>
           <div className="mt-3 space-y-3">
             {variantList.length === 0 ? (
-              <div className="text-sm text-slate-600 dark:text-slate-300">
+              <div className="text-sm text-pink-600 ">
                 Pricing will appear after admin adds variants.
               </div>
             ) : (
@@ -165,7 +165,7 @@ export default async function ProductPage({
                 >
                   <div className="text-sm">
                     <div className="font-medium">{v.label}</div>
-                    <div className="mt-0.5 text-xs text-slate-600 dark:text-slate-300">
+                    <div className="mt-0.5 text-xs text-pink-600 ">
                       {v.is_default ? 'Default' : 'Option'}
                     </div>
                   </div>
@@ -187,7 +187,7 @@ export default async function ProductPage({
             {imageList.map((img) => (
               <div
                 key={img.storage_path}
-                className="relative aspect-[4/5] overflow-hidden rounded-xl border border-slate-200 dark:border-slate-800"
+                className="relative aspect-[4/5] overflow-hidden rounded-xl border border-pink-100 "
               >
                 <Image
                   src={`${storageBaseUrl}/${img.storage_path}`}
@@ -200,7 +200,7 @@ export default async function ProductPage({
             ))}
           </div>
         ) : (
-          <div className="mt-4 rounded-xl border border-slate-200 bg-white p-6 text-sm text-slate-600 dark:border-slate-800 dark:bg-slate-950 dark:text-slate-300">
+          <div className="mt-4 rounded-xl border border-pink-100 bg-pink-50 p-6 text-sm text-pink-600   ">
             No images yet for this product. Upload pictures in the admin
             product editor.
           </div>
@@ -208,15 +208,15 @@ export default async function ProductPage({
       </section>
 
       <section className="mt-10 grid gap-6 lg:grid-cols-2">
-        <div className="rounded-xl border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-950">
+        <div className="rounded-xl border border-pink-100 bg-pink-50 p-5  ">
           <h2 className="text-lg font-semibold">Request a quote</h2>
-          <p className="mt-1 text-sm text-slate-600 dark:text-slate-300">
+          <p className="mt-1 text-sm text-pink-600 ">
             Tell us your variant and country. We’ll reply with shipping details
             and final pricing.
           </p>
         </div>
 
-        <div className="rounded-xl border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-950">
+        <div className="rounded-xl border border-pink-100 bg-pink-50 p-5  ">
           <QuoteForm
             productId={product.id}
             variantId={defaultVariant?.id}

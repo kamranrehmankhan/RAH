@@ -29,13 +29,13 @@ export default async function ProductsIndexPage({
   return (
     <main className="mx-auto max-w-6xl px-4 py-10">
       <h1 className="text-3xl font-semibold tracking-tight">Products</h1>
-      <p className="mt-2 text-slate-600 dark:text-slate-300">
+      <p className="mt-2 text-pink-600 ">
         Browse published abayas and see variant pricing on each product page.
       </p>
 
       <section className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {products.length === 0 ? (
-          <div className="rounded-xl border border-slate-200 bg-white p-6 text-sm text-slate-600 dark:border-slate-800 dark:bg-slate-950 dark:text-slate-300">
+          <div className="rounded-xl border border-pink-100 bg-pink-50 p-6 text-sm text-pink-600   ">
             No published products yet. Create products in the admin panel and
             set them to published.
           </div>
@@ -44,20 +44,20 @@ export default async function ProductsIndexPage({
             <Link
               key={p.id}
               href={`/${locale}/products/${p.slug}`}
-              className="group rounded-xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md dark:border-slate-800 dark:bg-slate-950"
+              className="group rounded-xl border border-pink-100 bg-pink-50 p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md  "
             >
               <div className="flex items-start justify-between gap-3">
                 <div className="min-w-0">
                   <div className="truncate text-lg font-semibold">
                     {p.title}
                   </div>
-                  <div className="mt-1 truncate text-sm text-slate-600 dark:text-slate-300">
+                  <div className="mt-1 truncate text-sm text-pink-600 ">
                     {p.category}
                     {p.material ? ` • ${p.material}` : ''}
                   </div>
                 </div>
               </div>
-              <div className="mt-4 text-sm font-medium text-slate-900 underline underline-offset-4 decoration-slate-900/30 group-hover:decoration-slate-900 dark:text-slate-100 dark:decoration-white/30">
+              <div className="mt-4 text-sm font-medium text-pink-900 underline underline-offset-4 decoration-slate-900/30 group-hover:decoration-slate-900  ">
                 View pricing →
               </div>
             </Link>

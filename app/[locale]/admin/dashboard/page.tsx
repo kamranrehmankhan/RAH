@@ -34,7 +34,7 @@ export default async function AdminDashboardPage({
       <div className="flex items-center justify-between gap-4">
         <div>
           <h1 className="text-2xl font-semibold">Admin Dashboard</h1>
-          <p className="mt-1 text-slate-600 dark:text-slate-300">
+          <p className="mt-1 text-pink-600 ">
             Upload pictures and set pricing for abayas.
           </p>
         </div>
@@ -44,7 +44,7 @@ export default async function AdminDashboardPage({
       <div className="mt-6 flex flex-wrap items-center gap-3">
         <Link
           href={`/${locale}/admin/products/new`}
-          className="rounded-md bg-slate-900 px-4 py-2 text-sm font-medium text-white hover:bg-slate-800 dark:bg-slate-50 dark:text-slate-900 dark:hover:bg-slate-200"
+          className="rounded-md bg-pink-500 px-4 py-2 text-sm font-medium text-white hover:bg-pink-600   "
         >
           + New product
         </Link>
@@ -53,18 +53,18 @@ export default async function AdminDashboardPage({
       <section className="mt-8">
         <h2 className="text-lg font-semibold">Recent products</h2>
         {products.length === 0 ? (
-          <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
+          <p className="mt-2 text-sm text-pink-600 ">
             No products yet. Create one to start uploading images and pricing
             variants.
           </p>
         ) : (
-          <ul className="mt-3 divide-y divide-slate-200 dark:divide-slate-800">
+          <ul className="mt-3 divide-y divide-slate-200 ">
             {products.map((p) => (
               <li key={p.id} className="py-3">
                 <div className="flex items-center justify-between gap-4">
                   <div className="min-w-0">
                     <div className="truncate font-medium">{p.title}</div>
-                    <div className="truncate text-sm text-slate-600 dark:text-slate-300">
+                    <div className="truncate text-sm text-pink-600 ">
                       {p.slug}
                     </div>
                   </div>
@@ -72,7 +72,7 @@ export default async function AdminDashboardPage({
                     href={`/${locale}/admin/products/new?from=${encodeURIComponent(
                       p.id
                     )}`}
-                    className="text-sm font-medium text-slate-900 underline underline-offset-4 hover:text-slate-700 dark:text-slate-100 dark:hover:text-white"
+                    className="text-sm font-medium text-pink-900 underline underline-offset-4 hover:text-slate-700  "
                   >
                     Edit (coming soon)
                   </Link>

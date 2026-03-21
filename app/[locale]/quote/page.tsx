@@ -11,12 +11,12 @@ export default async function QuotePage({
       <h1 className="text-3xl font-semibold tracking-tight">
         Request a Quote
       </h1>
-      <p className="mt-2 text-slate-600 dark:text-slate-300">
+      <p className="mt-2 text-pink-600 ">
         Share what you want to order, your size/variant, and your country.
         We’ll respond with shipping details and final pricing.
       </p>
 
-      <div className="mt-8 rounded-xl border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-950">
+      <div className="mt-8 rounded-xl border border-pink-100 bg-pink-50 p-5  ">
         <QuoteForm />
       </div>
     </main>

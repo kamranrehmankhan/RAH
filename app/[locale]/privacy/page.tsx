@@ -8,29 +8,29 @@ export default async function PrivacyPage({
   return (
     <main className="mx-auto max-w-6xl px-4 py-10">
       <h1 className="text-3xl font-semibold tracking-tight">Privacy Policy</h1>
-      <p className="mt-2 text-slate-600 dark:text-slate-300">
+      <p className="mt-2 text-pink-600 ">
         This is a placeholder privacy policy. Update it with your official
         business details and compliance requirements.
       </p>
 
-      <div className="mt-8 space-y-5 text-slate-700 dark:text-slate-200">
+      <div className="mt-8 space-y-5 text-slate-700 ">
         <section>
           <h2 className="text-lg font-semibold">What we collect</h2>
-          <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
+          <p className="mt-2 text-sm text-pink-600 ">
             Information you submit through forms (name, email, country, and
             inquiry message).
           </p>
         </section>
         <section>
           <h2 className="text-lg font-semibold">How we use it</h2>
-          <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
+          <p className="mt-2 text-sm text-pink-600 ">
             To respond to inquiries, provide shipping/pricing information, and
             improve customer service.
           </p>
         </section>
         <section>
           <h2 className="text-lg font-semibold">Contact</h2>
-          <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
+          <p className="mt-2 text-sm text-pink-600 ">
             Add your contact email/WhatsApp here.
           </p>
         </section>

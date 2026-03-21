@@ -31,13 +31,13 @@ export default async function CollectionPage({
       <h1 className="text-3xl font-semibold tracking-tight">
         {slug} Collection
       </h1>
-      <p className="mt-2 text-slate-600 dark:text-slate-300">
+      <p className="mt-2 text-pink-600 ">
         View pricing variants and request a quote.
       </p>
 
       <section className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {products.length === 0 ? (
-          <div className="rounded-xl border border-slate-200 bg-white p-6 text-sm text-slate-600 dark:border-slate-800 dark:bg-slate-950 dark:text-slate-300">
+          <div className="rounded-xl border border-pink-100 bg-pink-50 p-6 text-sm text-pink-600   ">
             No published products found for this collection yet. Once you
             publish products in the admin tools, they’ll appear here.
           </div>
@@ -46,13 +46,13 @@ export default async function CollectionPage({
             <Link
               key={p.id}
               href={`/${locale}/products/${p.slug}`}
-              className="group rounded-xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md dark:border-slate-800 dark:bg-slate-950"
+              className="group rounded-xl border border-pink-100 bg-pink-50 p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md  "
             >
               <div className="text-lg font-semibold">{p.title}</div>
-              <div className="mt-1 text-sm text-slate-600 dark:text-slate-300">
+              <div className="mt-1 text-sm text-pink-600 ">
                 {p.category}
               </div>
-              <div className="mt-4 text-sm font-medium text-slate-900 underline underline-offset-4 decoration-slate-900/30 group-hover:decoration-slate-900 dark:text-slate-100 dark:decoration-white/30">
+              <div className="mt-4 text-sm font-medium text-pink-900 underline underline-offset-4 decoration-slate-900/30 group-hover:decoration-slate-900  ">
                 View details →
               </div>
             </Link>

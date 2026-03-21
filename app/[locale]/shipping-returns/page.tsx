@@ -10,14 +10,14 @@ export default async function ShippingReturnsPage({
       <h1 className="text-3xl font-semibold tracking-tight">
         Shipping & Returns
       </h1>
-      <p className="mt-2 text-slate-600 dark:text-slate-300">
+      <p className="mt-2 text-pink-600 ">
         Transparent guidance for customers worldwide.
       </p>
 
-      <div className="mt-8 space-y-6 text-slate-700 dark:text-slate-200">
+      <div className="mt-8 space-y-6 text-slate-700 ">
         <section>
           <h2 className="text-lg font-semibold">Worldwide Shipping</h2>
-          <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
+          <p className="mt-2 text-sm text-pink-600 ">
             We ship internationally. Delivery times depend on destination country.
             Tracking details are shared once your order is confirmed.
           </p>
@@ -25,7 +25,7 @@ export default async function ShippingReturnsPage({
 
         <section>
           <h2 className="text-lg font-semibold">Custom Orders</h2>
-          <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
+          <p className="mt-2 text-sm text-pink-600 ">
             For custom sizes, lengths, or materials, use the “Request a Quote”
             form so we can confirm availability and final pricing.
           </p>
@@ -33,7 +33,7 @@ export default async function ShippingReturnsPage({
 
         <section>
           <h2 className="text-lg font-semibold">Returns & Exchanges</h2>
-          <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
+          <p className="mt-2 text-sm text-pink-600 ">
             Contact us within a reasonable time after delivery. We’ll guide you
             on eligible returns/exchanges and next steps.
           </p>
@@ -41,7 +41,7 @@ export default async function ShippingReturnsPage({
 
         <section>
           <h2 className="text-lg font-semibold">Important Notes</h2>
-          <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
+          <p className="mt-2 text-sm text-pink-600 ">
             Colors may vary slightly due to lighting and screen settings. Always
             check the size guide and variant pricing notes before ordering.
           </p>

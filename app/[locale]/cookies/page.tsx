@@ -8,21 +8,21 @@ export default async function CookiesPage({
   return (
     <main className="mx-auto max-w-6xl px-4 py-10">
       <h1 className="text-3xl font-semibold tracking-tight">Cookies Policy</h1>
-      <p className="mt-2 text-slate-600 dark:text-slate-300">
+      <p className="mt-2 text-pink-600 ">
         This is a placeholder cookies policy page. Update it to match your
         analytics/marketing tools.
       </p>
 
-      <div className="mt-8 space-y-5 text-slate-700 dark:text-slate-200">
+      <div className="mt-8 space-y-5 text-slate-700 ">
         <section>
           <h2 className="text-lg font-semibold">What cookies we use</h2>
-          <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
+          <p className="mt-2 text-sm text-pink-600 ">
             Update with which cookies you use (analytics, preferences, ads, etc.).
           </p>
         </section>
         <section>
           <h2 className="text-lg font-semibold">How to manage cookies</h2>
-          <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
+          <p className="mt-2 text-sm text-pink-600 ">
             You can manage cookies through your browser settings.
           </p>
         </section>

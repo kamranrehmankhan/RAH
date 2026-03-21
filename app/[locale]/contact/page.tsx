@@ -10,30 +10,30 @@ export default async function ContactPage({
   return (
     <main className="mx-auto max-w-6xl px-4 py-10">
       <h1 className="text-3xl font-semibold tracking-tight">Contact</h1>
-      <p className="mt-2 text-slate-600 dark:text-slate-300">
+      <p className="mt-2 text-pink-600 ">
         Reach us for orders, custom requests, and support.
       </p>
 
       <div className="mt-8 grid gap-4 md:grid-cols-2">
-        <div className="rounded-xl border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-950">
+        <div className="rounded-xl border border-pink-100 bg-pink-50 p-5  ">
           <h2 className="font-semibold">Request a Quote</h2>
-          <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
+          <p className="mt-2 text-sm text-pink-600 ">
             Fastest way to get pricing and shipping info for your country.
           </p>
           <a
             href={`/${locale}/quote`}
-            className="mt-4 inline-flex rounded-md bg-slate-900 px-4 py-2 text-sm font-medium text-white hover:bg-slate-800 dark:bg-slate-50 dark:text-slate-900 dark:hover:bg-slate-200"
+            className="mt-4 inline-flex rounded-md bg-pink-500 px-4 py-2 text-sm font-medium text-white hover:bg-pink-600   "
           >
             Go to Quote Form
           </a>
         </div>
 
-        <div className="rounded-xl border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-950">
+        <div className="rounded-xl border border-pink-100 bg-pink-50 p-5  ">
           <h2 className="font-semibold">Email</h2>
-          <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
+          <p className="mt-2 text-sm text-pink-600 ">
             Add your support email in the next step.
           </p>
-          <p className="mt-4 text-sm text-slate-600 dark:text-slate-300">
+          <p className="mt-4 text-sm text-pink-600 ">
             Add WhatsApp link here for quick international replies.
           </p>
         </div>
