@@ -20,10 +20,10 @@ function FadeIn({ children, delay = 0 }: { children: React.ReactNode, delay?: nu
 
 export default function HomePage({ locale }: { locale: string }) {
   return (
-    <main className="min-h-screen bg-cream-50 font-serif">
+    <main className="min-h-screen bg-pink-50 font-serif">
 
       {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-blush-100 via-cream-100 to-rose-50 py-20 border-b border-rose-100">
+      <section className="relative overflow-hidden bg-gradient-to-br from-pink-100 via-rose-50 to-rose-50 py-20 border-b border-pink-100">
         <div className="mx-auto max-w-6xl px-4">
           <div className="grid gap-10 md:grid-cols-2 md:items-center">
             <motion.div
@@ -31,14 +31,14 @@ export default function HomePage({ locale }: { locale: string }) {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.9, ease: "easeOut" }}
             >
-              <p className="text-sm font-medium text-rose-400 tracking-widest uppercase">
+              <p className="text-sm font-medium text-pink-400 tracking-widest uppercase">
                 Worldwide delivery • Premium fabrics • Modern craftsmanship
               </p>
-              <h1 className="mt-4 text-5xl font-semibold tracking-tight text-rose-900 md:text-6xl leading-tight">
+              <h1 className="mt-4 text-5xl font-semibold tracking-tight text-pink-900 md:text-6xl leading-tight">
                 Abayas built for<br/>
-                <span className="text-rose-400">global style</span>
+                <span className="text-pink-400">global style</span>
               </h1>
-              <p className="mt-5 text-lg text-rose-700">
+              <p className="mt-5 text-lg text-pink-700">
                 Create your look for Eid, weddings, Ramadan, and everyday elegance.
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
@@ -46,7 +46,7 @@ export default function HomePage({ locale }: { locale: string }) {
                   href={`/${locale}/products`}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.97 }}
-                  className="inline-flex items-center justify-center rounded-full bg-rose-500 px-7 py-3 text-sm font-medium text-white shadow-md hover:bg-rose-600 transition-colors"
+                  className="inline-flex items-center justify-center rounded-full bg-pink-500 px-7 py-3 text-sm font-medium text-white shadow-md hover:bg-pink-600 transition-colors"
                 >
                   Shop Abayas
                 </motion.a>
@@ -54,7 +54,7 @@ export default function HomePage({ locale }: { locale: string }) {
                   href={`/${locale}/quote`}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.97 }}
-                  className="inline-flex items-center justify-center rounded-full border-2 border-rose-300 bg-white px-7 py-3 text-sm font-medium text-rose-600 hover:bg-rose-50 transition-colors"
+                  className="inline-flex items-center justify-center rounded-full border-2 border-pink-300 bg-white px-7 py-3 text-sm font-medium text-pink-600 hover:bg-pink-50 transition-colors"
                 >
                   Request a Quote
                 </motion.a>
@@ -65,7 +65,7 @@ export default function HomePage({ locale }: { locale: string }) {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.3, ease: "easeOut" }}
-              className="rounded-3xl border border-rose-100 bg-white p-6 shadow-lg"
+              className="rounded-3xl border border-pink-100 bg-white p-6 shadow-lg"
             >
               <div className="grid gap-4 sm:grid-cols-2">
                 {[
@@ -79,10 +79,10 @@ export default function HomePage({ locale }: { locale: string }) {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.5 + i * 0.1 }}
-                    className="rounded-2xl bg-blush-100 p-4"
+                    className="rounded-2xl bg-pink-100 p-4"
                   >
-                    <div className="text-sm font-semibold text-rose-800">{item.title}</div>
-                    <div className="mt-1 text-sm text-rose-600">{item.desc}</div>
+                    <div className="text-sm font-semibold text-pink-800">{item.title}</div>
+                    <div className="mt-1 text-sm text-pink-600">{item.desc}</div>
                   </motion.div>
                 ))}
               </div>
@@ -96,10 +96,10 @@ export default function HomePage({ locale }: { locale: string }) {
         <FadeIn>
           <div className="flex items-end justify-between gap-4">
             <div>
-              <h2 className="text-3xl font-semibold text-rose-900">Shop by Occasion</h2>
-              <p className="mt-2 text-rose-500">Find the right abaya for your celebration or daily style.</p>
+              <h2 className="text-3xl font-semibold text-pink-900">Shop by Occasion</h2>
+              <p className="mt-2 text-pink-500">Find the right abaya for your celebration or daily style.</p>
             </div>
-            <a href={`/${locale}/collections`} className="text-sm font-medium text-rose-500 underline underline-offset-4 hover:text-rose-700">
+            <a href={`/${locale}/collections`} className="text-sm font-medium text-pink-500 underline underline-offset-4 hover:text-pink-700">
               View all collections
             </a>
           </div>
@@ -116,12 +116,12 @@ export default function HomePage({ locale }: { locale: string }) {
               <motion.a
                 href={`/${locale}/collections/${c.slug}`}
                 whileHover={{ scale: 1.03, y: -4 }}
-                className="block rounded-2xl border border-rose-100 bg-white p-6 shadow-sm hover:shadow-md transition-shadow"
+                className="block rounded-2xl border border-pink-100 bg-white p-6 shadow-sm hover:shadow-md transition-shadow"
               >
                 <div className="text-3xl">{c.emoji}</div>
-                <div className="mt-3 text-lg font-semibold text-rose-900">{c.title}</div>
-                <div className="mt-1 text-sm text-rose-500">Explore styles + pricing variants</div>
-                <div className="mt-4 text-sm font-medium text-rose-400 hover:text-rose-600">Browse →</div>
+                <div className="mt-3 text-lg font-semibold text-pink-900">{c.title}</div>
+                <div className="mt-1 text-sm text-pink-500">Explore styles + pricing variants</div>
+                <div className="mt-4 text-sm font-medium text-pink-400 hover:text-pink-600">Browse →</div>
               </motion.a>
             </FadeIn>
           ))}
@@ -129,7 +129,7 @@ export default function HomePage({ locale }: { locale: string }) {
       </section>
 
       {/* Footer Banner */}
-      <section className="bg-gradient-to-r from-rose-100 to-blush-100 py-14 border-t border-rose-100">
+      <section className="bg-gradient-to-r from-pink-100 to-pink-100 py-14 border-t border-pink-100">
         <div className="mx-auto max-w-6xl px-4">
           <div className="grid gap-6 md:grid-cols-3">
             {[
@@ -138,9 +138,9 @@ export default function HomePage({ locale }: { locale: string }) {
               { title: 'Secure Admin Tools', desc: 'Upload images and manage pricing with ease.' },
             ].map((item, i) => (
               <FadeIn key={item.title} delay={i * 0.15}>
-                <div className="rounded-2xl border border-rose-100 bg-white p-6 shadow-sm">
-                  <div className="font-semibold text-rose-800">{item.title}</div>
-                  <p className="mt-2 text-sm text-rose-500">{item.desc}</p>
+                <div className="rounded-2xl border border-pink-100 bg-white p-6 shadow-sm">
+                  <div className="font-semibold text-pink-800">{item.title}</div>
+                  <p className="mt-2 text-sm text-pink-500">{item.desc}</p>
                 </div>
               </FadeIn>
             ))}
