@@ -30,7 +30,7 @@ export default async function LocaleLayout({
   }
 
   return (
-    <div dir={dir}>
+    <div dir={dir} className="min-h-screen bg-pink-50 text-pink-900">
       <NextIntlClientProvider locale={locale} messages={messages}>
         <script
           type="application/ld+json"
