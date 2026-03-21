@@ -6,12 +6,12 @@ import {useTranslations} from 'next-intl'
 
 import {createSupabaseBrowserClient} from '@/lib/supabase/browser'
 
-export default function AdminLoginPage({
+export default async function AdminLoginPage({
   params
 }: {
-  params: {locale: string}
+  params: Promise<{locale: string}>
 }) {
-  const {locale} = params
+  const {locale} = await params
   const t = useTranslations()
   const router = useRouter()
 
