@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 3, "column": 0}, "map": {"version":3,"sources":["file:///Users/kamrankhan/web/messages/ur.json.%5Bjson%5D.cjs/turbopack%3A/messages/ur.json"],"sourcesContent":["{\"brand\":\"عبایہ\",\"nav\":{\"home\":\"ہوم\",\"collections\":\"مجموعے\",\"products\":\"پروڈکٹس\",\"quote\":\"کوٹ کی درخواست\",\"admin\":\"ایڈمن\"},\"admin\":{\"loginTitle\":\"ایڈمن لاگ اِن\",\"email\":\"ای میل\",\"password\":\"پاس ورڈ\",\"signIn\":\"لاگ اِن\",\"dashboard\":\"ڈیش بورڈ\"}}"],"names":[],"mappings":""}}]
+}

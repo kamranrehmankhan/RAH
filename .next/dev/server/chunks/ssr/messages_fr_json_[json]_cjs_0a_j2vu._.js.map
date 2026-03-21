@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 3, "column": 0}, "map": {"version":3,"sources":["file:///Users/kamrankhan/web/messages/fr.json.%5Bjson%5D.cjs/turbopack%3A/messages/fr.json"],"sourcesContent":["{\"brand\":\"Abayas\",\"nav\":{\"home\":\"Accueil\",\"collections\":\"Collections\",\"products\":\"Produits\",\"quote\":\"Demander un devis\",\"admin\":\"Administration\"},\"admin\":{\"loginTitle\":\"Connexion admin\",\"email\":\"E-mail\",\"password\":\"Mot de passe\",\"signIn\":\"Se connecter\",\"dashboard\":\"Tableau de bord\"}}"],"names":[],"mappings":""}}]
+}

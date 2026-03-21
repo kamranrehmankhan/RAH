@@ -1,11 +1,11 @@
 import {buildPageMetadata, getLocaleFromString} from '@/lib/seo/metadata'
 
-export default function HomeByLocale({
+export default async function HomeByLocale({
   params
 }: {
-  params: {locale: string}
+  params: Promise<{locale: string}>
 }) {
-  const {locale} = params
+  const {locale} = await params
 
   return (
     <main className="min-h-screen">
@@ -141,12 +141,13 @@ export default function HomeByLocale({
   )
 }
 
-export function generateMetadata({
+export async function generateMetadata({
   params
 }: {
   params: {locale: string}
 }) {
-  const locale = getLocaleFromString(params.locale) ?? 'en'
+  const {locale: localeParam} = await params
+  const locale = getLocaleFromString(localeParam) ?? 'en'
 
   const variants: Record<typeof locale, {title: string; description: string}> = {
     en: {

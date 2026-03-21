@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 3, "column": 0}, "map": {"version":3,"sources":["file:///Users/kamrankhan/web/messages/ar.json.%5Bjson%5D.cjs/turbopack%3A/messages/ar.json"],"sourcesContent":["{\"brand\":\"عبايات\",\"nav\":{\"home\":\"الرئيسية\",\"collections\":\"المجموعات\",\"products\":\"المنتجات\",\"quote\":\"اطلب عرضاً\",\"admin\":\"لوحة التحكم\"},\"admin\":{\"loginTitle\":\"تسجيل الدخول للمشرف\",\"email\":\"البريد الإلكتروني\",\"password\":\"كلمة المرور\",\"signIn\":\"تسجيل الدخول\",\"dashboard\":\"لوحة التحكم\"}}"],"names":[],"mappings":""}}]
+}
