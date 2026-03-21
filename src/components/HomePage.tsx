@@ -26,7 +26,7 @@ export default function HomePage({ locale }: { locale: string }) {
     <main className="min-h-screen bg-pink-50">
 
       {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-pink-100 via-rose-50 to-pink-50 py-20 border-b border-pink-100">
+      <section className="relative overflow-hidden bg-gradient-to-br from-pink-200 via-pink-100 to-rose-100 py-20 border-b border-pink-200">
         <div className="mx-auto max-w-6xl px-4">
           <div className="grid gap-10 md:grid-cols-2 md:items-center">
             <motion.div
@@ -37,7 +37,7 @@ export default function HomePage({ locale }: { locale: string }) {
               <p className="text-sm font-medium text-pink-400 tracking-widest uppercase">
                 {t('tagline')}
               </p>
-              <h1 className="mt-4 text-5xl font-semibold tracking-tight text-pink-900 md:text-6xl leading-tight">
+              <h1 className="mt-4 text-5xl font-bold tracking-tight text-pink-950 md:text-6xl leading-tight drop-shadow-sm">
                 {t('hero_title')}
               </h1>
               <p className="mt-5 text-lg text-pink-700">
@@ -131,7 +131,7 @@ export default function HomePage({ locale }: { locale: string }) {
       </section>
 
       {/* Footer Banner */}
-      <section className="bg-gradient-to-r from-pink-100 to-rose-100 py-14 border-t border-pink-100">
+      <section className="bg-gradient-to-r from-pink-200 to-rose-200 py-14 border-t border-pink-200">
         <div className="mx-auto max-w-6xl px-4">
           <div className="grid gap-6 md:grid-cols-3">
             {[
@@ -140,8 +140,8 @@ export default function HomePage({ locale }: { locale: string }) {
               { title: t('secure_title'), desc: t('secure_desc') },
             ].map((item, i) => (
               <FadeIn key={item.title} delay={i * 0.15}>
-                <div className="rounded-2xl border border-pink-100 bg-white p-6 shadow-sm">
-                  <div className="font-semibold text-pink-800">{item.title}</div>
+                <div className="rounded-2xl border border-pink-200 bg-white p-6 shadow-md">
+                  <div className="font-bold text-pink-900">{item.title}</div>
                   <p className="mt-2 text-sm text-pink-500">{item.desc}</p>
                 </div>
               </FadeIn>
