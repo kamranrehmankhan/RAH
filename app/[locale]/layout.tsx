@@ -16,7 +16,7 @@ export default async function LocaleLayout({
   params: Promise<{locale: string}>
 }) {
   const {locale} = await params
-  const dir = locale === 'ar' ? 'rtl' : 'ltr'
+  const dir = (locale === 'ar' || locale === 'ur') ? 'rtl' : 'ltr'
   const messages = await getMessages()
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'
 
