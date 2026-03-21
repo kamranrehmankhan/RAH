@@ -122,8 +122,8 @@ export default function HomePage({ locale }: { locale: string }) {
               >
                 <div className="text-3xl">{c.emoji}</div>
                 <div className="mt-3 text-lg font-semibold text-pink-900">{c.title}</div>
-                <div className="mt-1 text-sm text-pink-500">Explore styles + pricing variants</div>
-                <div className="mt-4 text-sm font-medium text-pink-400 hover:text-pink-600">Browse →</div>
+                <div className="mt-1 text-sm text-pink-500">{t('occasions_explore')}</div>
+                <div className="mt-4 text-sm font-medium text-pink-400 hover:text-pink-600">{t('browse')}</div>
               </motion.a>
             </FadeIn>
           ))}

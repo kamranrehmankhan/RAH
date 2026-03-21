@@ -29,7 +29,9 @@
     "returns_title": "Retours faciles",
     "returns_desc": "Conseils clairs pour les retours et échanges.",
     "secure_title": "Outils Admin Sécurisés",
-    "secure_desc": "Téléchargez des images et gérez les prix facilement."
+    "secure_desc": "Téléchargez des images et gérez les prix facilement.",
+    "occasions_explore": "Explorer les styles + prix",
+    "browse": "Parcourir →"
   },
   "admin": {
     "loginTitle": "Connexion Admin",

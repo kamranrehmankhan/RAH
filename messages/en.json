@@ -29,7 +29,9 @@
     "returns_title": "Easy Returns",
     "returns_desc": "Clear guidance for returns and exchanges worldwide.",
     "secure_title": "Secure Admin Tools",
-    "secure_desc": "Upload images and manage pricing with ease."
+    "secure_desc": "Upload images and manage pricing with ease.",
+    "occasions_explore": "Explore styles + pricing variants",
+    "browse": "Browse →"
   },
   "admin": {
     "loginTitle": "Admin Login",
