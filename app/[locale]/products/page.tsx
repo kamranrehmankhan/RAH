@@ -8,9 +8,9 @@ export const dynamic = 'force-dynamic'
 export default async function ProductsIndexPage({
   params
 }: {
-  params: {locale: string}
+  params: Promise<{locale: string}>
 }) {
-  const {locale} = params
+  const {locale} = await params
 
   let products: Array<{id: string; title: string; slug: string; category: string; material: string | null}> = []
   try {
@@ -68,10 +68,10 @@ export default async function ProductsIndexPage({
   )
 }
 
-export function generateMetadata({
+export async function generateMetadata({
   params
 }: {
-  params: {locale: string}
+  params: Promise<{locale: string}>
 }) {
   const locale = getLocaleFromString(params.locale) ?? 'en'
 

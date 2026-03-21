@@ -6,9 +6,9 @@ export const dynamic = 'force-dynamic'
 export default async function AdminNewProductPage({
   params
 }: {
-  params: {locale: string}
+  params: Promise<{locale: string}>
 }) {
-  const {locale} = params
+  const {locale} = await params
   await requireAdmin(locale)
 
   return (

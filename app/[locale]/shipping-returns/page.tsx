@@ -1,9 +1,9 @@
 import {buildPageMetadata, getLocaleFromString} from '@/lib/seo/metadata'
 
-export default function ShippingReturnsPage({
+export default async function ShippingReturnsPage({
   params
 }: {
-  params: {locale: string}
+  params: Promise<{locale: string}>
 }) {
   return (
     <main className="mx-auto max-w-6xl px-4 py-10">
@@ -51,10 +51,10 @@ export default function ShippingReturnsPage({
   )
 }
 
-export function generateMetadata({
+export async function generateMetadata({
   params
 }: {
-  params: {locale: string}
+  params: Promise<{locale: string}>
 }) {
   const locale = getLocaleFromString(params.locale) ?? 'en'
 

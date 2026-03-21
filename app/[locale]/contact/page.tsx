@@ -1,11 +1,11 @@
 import {buildPageMetadata, getLocaleFromString} from '@/lib/seo/metadata'
 
-export default function ContactPage({
+export default async function ContactPage({
   params
 }: {
-  params: {locale: string}
+  params: Promise<{locale: string}>
 }) {
-  const {locale} = params
+  const {locale} = await params
 
   return (
     <main className="mx-auto max-w-6xl px-4 py-10">
@@ -42,10 +42,10 @@ export default function ContactPage({
   )
 }
 
-export function generateMetadata({
+export async function generateMetadata({
   params
 }: {
-  params: {locale: string}
+  params: Promise<{locale: string}>
 }) {
   const locale = getLocaleFromString(params.locale) ?? 'en'
 

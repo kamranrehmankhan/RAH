@@ -1,11 +1,11 @@
 import {buildPageMetadata, getLocaleFromString} from '@/lib/seo/metadata'
 
-export default function CollectionsIndexPage({
+export default async function CollectionsIndexPage({
   params
 }: {
-  params: {locale: string}
+  params: Promise<{locale: string}>
 }) {
-  const {locale} = params
+  const {locale} = await params
 
   const collections = [
     {slug: 'Eid', title: 'Eid'},
@@ -40,10 +40,10 @@ export default function CollectionsIndexPage({
   )
 }
 
-export function generateMetadata({
+export async function generateMetadata({
   params
 }: {
-  params: {locale: string}
+  params: Promise<{locale: string}>
 }) {
   const locale = getLocaleFromString(params.locale) ?? 'en'
 
