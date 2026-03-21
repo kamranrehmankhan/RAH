@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { useEffect, useRef, useState } from 'react'
+import { useTranslations } from 'next-intl'
 
 function FadeIn({ children, delay = 0 }: { children: React.ReactNode, delay?: number }) {
   const ref = useRef<HTMLDivElement>(null)
@@ -19,11 +20,13 @@ function FadeIn({ children, delay = 0 }: { children: React.ReactNode, delay?: nu
 }
 
 export default function HomePage({ locale }: { locale: string }) {
+  const t = useTranslations('home')
+
   return (
-    <main className="min-h-screen bg-pink-50 font-serif">
+    <main className="min-h-screen bg-pink-50">
 
       {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-pink-100 via-rose-50 to-rose-50 py-20 border-b border-pink-100">
+      <section className="relative overflow-hidden bg-gradient-to-br from-pink-100 via-rose-50 to-pink-50 py-20 border-b border-pink-100">
         <div className="mx-auto max-w-6xl px-4">
           <div className="grid gap-10 md:grid-cols-2 md:items-center">
             <motion.div
@@ -32,14 +35,13 @@ export default function HomePage({ locale }: { locale: string }) {
               transition={{ duration: 0.9, ease: "easeOut" }}
             >
               <p className="text-sm font-medium text-pink-400 tracking-widest uppercase">
-                Worldwide delivery • Premium fabrics • Modern craftsmanship
+                {t('tagline')}
               </p>
               <h1 className="mt-4 text-5xl font-semibold tracking-tight text-pink-900 md:text-6xl leading-tight">
-                Abayas built for<br/>
-                <span className="text-pink-400">global style</span>
+                {t('hero_title')}
               </h1>
               <p className="mt-5 text-lg text-pink-700">
-                Create your look for Eid, weddings, Ramadan, and everyday elegance.
+                {t('hero_desc')}
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
                 <motion.a
@@ -48,7 +50,7 @@ export default function HomePage({ locale }: { locale: string }) {
                   whileTap={{ scale: 0.97 }}
                   className="inline-flex items-center justify-center rounded-full bg-pink-500 px-7 py-3 text-sm font-medium text-white shadow-md hover:bg-pink-600 transition-colors"
                 >
-                  Shop Abayas
+                  {t('shop_btn')}
                 </motion.a>
                 <motion.a
                   href={`/${locale}/quote`}
@@ -56,7 +58,7 @@ export default function HomePage({ locale }: { locale: string }) {
                   whileTap={{ scale: 0.97 }}
                   className="inline-flex items-center justify-center rounded-full border-2 border-pink-300 bg-white px-7 py-3 text-sm font-medium text-pink-600 hover:bg-pink-50 transition-colors"
                 >
-                  Request a Quote
+                  {t('quote_btn')}
                 </motion.a>
               </div>
             </motion.div>
@@ -69,10 +71,10 @@ export default function HomePage({ locale }: { locale: string }) {
             >
               <div className="grid gap-4 sm:grid-cols-2">
                 {[
-                  { title: 'Trusted quality', desc: 'Fabric-first design and durable stitching.' },
-                  { title: 'Clear pricing', desc: 'Variant pricing for size/length/material.' },
-                  { title: 'Fast admin updates', desc: 'Upload images and update pricing in seconds.' },
-                  { title: 'Global support', desc: 'International shipping + easy returns.' },
+                  { title: t('quality_title'), desc: t('quality_desc') },
+                  { title: t('pricing_title'), desc: t('pricing_desc') },
+                  { title: t('admin_title'), desc: t('admin_desc') },
+                  { title: t('support_title'), desc: t('support_desc') },
                 ].map((item, i) => (
                   <motion.div
                     key={item.title}
@@ -96,11 +98,11 @@ export default function HomePage({ locale }: { locale: string }) {
         <FadeIn>
           <div className="flex items-end justify-between gap-4">
             <div>
-              <h2 className="text-3xl font-semibold text-pink-900">Shop by Occasion</h2>
-              <p className="mt-2 text-pink-500">Find the right abaya for your celebration or daily style.</p>
+              <h2 className="text-3xl font-semibold text-pink-900">{t('occasions_title')}</h2>
+              <p className="mt-2 text-pink-500">{t('occasions_desc')}</p>
             </div>
             <a href={`/${locale}/collections`} className="text-sm font-medium text-pink-500 underline underline-offset-4 hover:text-pink-700">
-              View all collections
+              {t('view_all')}
             </a>
           </div>
         </FadeIn>
@@ -129,13 +131,13 @@ export default function HomePage({ locale }: { locale: string }) {
       </section>
 
       {/* Footer Banner */}
-      <section className="bg-gradient-to-r from-pink-100 to-pink-100 py-14 border-t border-pink-100">
+      <section className="bg-gradient-to-r from-pink-100 to-rose-100 py-14 border-t border-pink-100">
         <div className="mx-auto max-w-6xl px-4">
           <div className="grid gap-6 md:grid-cols-3">
             {[
-              { title: 'Worldwide Shipping', desc: 'International delivery with transparent timelines.' },
-              { title: 'Easy Returns', desc: 'Clear guidance for returns and exchanges worldwide.' },
-              { title: 'Secure Admin Tools', desc: 'Upload images and manage pricing with ease.' },
+              { title: t('shipping_title'), desc: t('shipping_desc') },
+              { title: t('returns_title'), desc: t('returns_desc') },
+              { title: t('secure_title'), desc: t('secure_desc') },
             ].map((item, i) => (
               <FadeIn key={item.title} delay={i * 0.15}>
                 <div className="rounded-2xl border border-pink-100 bg-white p-6 shadow-sm">

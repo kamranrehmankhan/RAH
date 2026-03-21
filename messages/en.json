@@ -7,12 +7,35 @@
     "quote": "Request a Quote",
     "admin": "Admin"
   },
+  "home": {
+    "tagline": "Worldwide delivery • Premium fabrics • Modern craftsmanship",
+    "hero_title": "Abayas built for global style",
+    "hero_desc": "Create your look for Eid, weddings, Ramadan, and everyday elegance.",
+    "shop_btn": "Shop Abayas",
+    "quote_btn": "Request a Quote",
+    "quality_title": "Trusted quality",
+    "quality_desc": "Fabric-first design and durable stitching.",
+    "pricing_title": "Clear pricing",
+    "pricing_desc": "Variant pricing for size/length/material.",
+    "admin_title": "Fast admin updates",
+    "admin_desc": "Upload images and update pricing in seconds.",
+    "support_title": "Global support",
+    "support_desc": "International shipping + easy returns.",
+    "occasions_title": "Shop by Occasion",
+    "occasions_desc": "Find the right abaya for your celebration or daily style.",
+    "view_all": "View all collections",
+    "shipping_title": "Worldwide Shipping",
+    "shipping_desc": "International delivery with transparent timelines.",
+    "returns_title": "Easy Returns",
+    "returns_desc": "Clear guidance for returns and exchanges worldwide.",
+    "secure_title": "Secure Admin Tools",
+    "secure_desc": "Upload images and manage pricing with ease."
+  },
   "admin": {
-    "loginTitle": "Admin login",
+    "loginTitle": "Admin Login",
     "email": "Email",
     "password": "Password",
-    "signIn": "Sign in",
+    "signIn": "Sign In",
     "dashboard": "Dashboard"
   }
 }
-

@@ -5,14 +5,37 @@
     "collections": "Collections",
     "products": "Produits",
     "quote": "Demander un devis",
-    "admin": "Administration"
+    "admin": "Admin"
+  },
+  "home": {
+    "tagline": "Livraison mondiale • Tissus premium • Savoir-faire moderne",
+    "hero_title": "Des abayas pour un style mondial",
+    "hero_desc": "Créez votre look pour l'Aïd, les mariages, le Ramadan et l'élégance quotidienne.",
+    "shop_btn": "Acheter des Abayas",
+    "quote_btn": "Demander un devis",
+    "quality_title": "Qualité de confiance",
+    "quality_desc": "Design axé sur le tissu et coutures durables.",
+    "pricing_title": "Prix clairs",
+    "pricing_desc": "Tarification par variante pour taille/longueur/matière.",
+    "admin_title": "Mises à jour rapides",
+    "admin_desc": "Téléchargez des images et mettez à jour les prix en secondes.",
+    "support_title": "Support mondial",
+    "support_desc": "Livraison internationale + retours faciles.",
+    "occasions_title": "Acheter par occasion",
+    "occasions_desc": "Trouvez l'abaya parfaite pour votre célébration ou style quotidien.",
+    "view_all": "Voir toutes les collections",
+    "shipping_title": "Livraison mondiale",
+    "shipping_desc": "Livraison internationale avec des délais transparents.",
+    "returns_title": "Retours faciles",
+    "returns_desc": "Conseils clairs pour les retours et échanges.",
+    "secure_title": "Outils Admin Sécurisés",
+    "secure_desc": "Téléchargez des images et gérez les prix facilement."
   },
   "admin": {
-    "loginTitle": "Connexion admin",
-    "email": "E-mail",
+    "loginTitle": "Connexion Admin",
+    "email": "Email",
     "password": "Mot de passe",
     "signIn": "Se connecter",
     "dashboard": "Tableau de bord"
   }
 }
-
