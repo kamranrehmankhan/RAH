@@ -16,20 +16,20 @@ export default async function ContactPage({
 
       <div className="mt-8 grid gap-4 md:grid-cols-2">
         <div className="rounded-xl border border-pink-100 bg-pink-50 p-5  ">
-          <h2 className="font-semibold">Request a Quote</h2>
+          <h2 className="font-semibold text-pink-900">Request a Quote</h2>
           <p className="mt-2 text-sm text-pink-600 ">
             Fastest way to get pricing and shipping info for your country.
           </p>
           <a
             href={`/${locale}/quote`}
-            className="mt-4 inline-flex rounded-md bg-pink-500 px-4 py-2 text-sm font-medium text-white hover:bg-pink-600   "
+            className="mt-4 inline-flex rounded-md bg-pink-600 px-4 py-2 text-sm font-medium text-white hover:bg-pink-600   "
           >
             Go to Quote Form
           </a>
         </div>
 
         <div className="rounded-xl border border-pink-100 bg-pink-50 p-5  ">
-          <h2 className="font-semibold">Email</h2>
+          <h2 className="font-semibold text-pink-900">Email</h2>
           <p className="mt-2 text-sm text-pink-600 ">
             Add your support email in the next step.
           </p>

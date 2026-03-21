@@ -81,7 +81,7 @@ export default function HomePage({ locale }: { locale: string }) {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.5 + i * 0.1 }}
-                    className="rounded-2xl bg-pink-100 p-4"
+                    className="rounded-2xl bg-white border border-pink-100 p-4"
                   >
                     <div className="text-sm font-semibold text-pink-800">{item.title}</div>
                     <div className="mt-1 text-sm text-pink-600">{item.desc}</div>

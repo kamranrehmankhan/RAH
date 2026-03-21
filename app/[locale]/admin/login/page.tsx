@@ -80,7 +80,7 @@ export default async function AdminLoginPage({
         ) : null}
 
         <button
-          className="w-full rounded-md bg-pink-500 px-4 py-2 font-medium text-white hover:bg-pink-600 disabled:opacity-60   "
+          className="w-full rounded-md bg-pink-600 px-4 py-2 font-medium text-white hover:bg-pink-600 disabled:opacity-60   "
           disabled={isPending}
           type="submit"
         >
