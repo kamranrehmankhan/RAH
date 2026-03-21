@@ -56,7 +56,8 @@ export async function generateMetadata({
 }: {
   params: Promise<{locale: string}>
 }) {
-  const locale = getLocaleFromString(params.locale) ?? 'en'
+  const {locale: localeParam} = await params
+  const locale = getLocaleFromString(localeParam) ?? 'en'
 
   const variants: Record<typeof locale, {title: string; description: string}> =
     {

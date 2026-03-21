@@ -236,7 +236,8 @@ export async function generateMetadata({
 }: {
   params: {locale: string; slug: string}
 }) {
-  const locale = getLocaleFromString(params.locale) ?? 'en'
+  const {locale: localeParam} = await params
+  const locale = getLocaleFromString(localeParam) ?? 'en'
   const {slug} = params
 
   try {
