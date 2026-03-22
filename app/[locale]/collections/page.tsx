@@ -45,7 +45,7 @@ export default async function CollectionsPage({
         ) : (
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {collections.map((c, i) => (
-              
+              <a
                 key={c.slug}
                 href={`/${locale}/collections/${c.slug}`}
                 className="group block rounded-2xl p-8 transition-all duration-500 hover:-translate-y-2 hover:shadow-xl"
