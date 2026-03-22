@@ -1,154 +1,61 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { useEffect, useRef, useState } from 'react'
-import { useTranslations } from 'next-intl'
-
-function FadeIn({ children, delay = 0 }: { children: React.ReactNode, delay?: number }) {
-  const ref = useRef<HTMLDivElement>(null)
-  const [visible, setVisible] = useState(false)
-  useEffect(() => {
-    const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) setVisible(true) }, { threshold: 0.1 })
-    if (ref.current) obs.observe(ref.current)
-    return () => obs.disconnect()
-  }, [])
-  return (
-    <div ref={ref} style={{ opacity: visible ? 1 : 0, transform: visible ? 'none' : 'translateY(30px)', transition: `opacity 0.8s ease ${delay}s, transform 0.8s ease ${delay}s` }}>
-      {children}
-    </div>
-  )
-}
+import Link from 'next/link'
 
 export default function HomePage({ locale }: { locale: string }) {
-  const t = useTranslations('home')
-
   return (
-    <main className="min-h-screen bg-pink-50">
+    <main className="min-h-screen" style={{ backgroundColor: '#fef5f0', color: '#322e2b' }}>
 
-      {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-pink-200 via-pink-100 to-rose-100 py-20 border-b border-pink-200">
-        <div className="mx-auto max-w-6xl px-4">
-          <div className="grid gap-10 md:grid-cols-2 md:items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -40 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.9, ease: "easeOut" }}
-            >
-              <p className="text-sm font-medium text-pink-400 tracking-widest uppercase">
-                {t('tagline')}
-              </p>
-              <h1 className="mt-4 text-5xl font-bold tracking-tight text-pink-950 md:text-6xl leading-tight drop-shadow-sm">
-                {t('hero_title')}
-              </h1>
-              <p className="mt-5 text-lg text-pink-700">
-                {t('hero_desc')}
-              </p>
-              <div className="mt-8 flex flex-wrap gap-4">
-                <motion.a
-                  href={`/${locale}/products`}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.97 }}
-                  className="inline-flex items-center justify-center rounded-full bg-pink-500 px-7 py-3 text-sm font-medium text-white shadow-md hover:bg-pink-600 transition-colors"
-                >
-                  {t('shop_btn')}
-                </motion.a>
-                <motion.a
-                  href={`/${locale}/quote`}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.97 }}
-                  className="inline-flex items-center justify-center rounded-full border-2 border-pink-300 bg-white px-7 py-3 text-sm font-medium text-pink-600 hover:bg-pink-50 transition-colors"
-                >
-                  {t('quote_btn')}
-                </motion.a>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.9, delay: 0.3, ease: "easeOut" }}
-              className="rounded-3xl border border-pink-100 bg-white p-6 shadow-lg"
-            >
-              <div className="grid gap-4 sm:grid-cols-2">
-                {[
-                  { title: t('quality_title'), desc: t('quality_desc') },
-                  { title: t('pricing_title'), desc: t('pricing_desc') },
-                  { title: t('admin_title'), desc: t('admin_desc') },
-                  { title: t('support_title'), desc: t('support_desc') },
-                ].map((item, i) => (
-                  <motion.div
-                    key={item.title}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.5 + i * 0.1 }}
-                    className="rounded-2xl bg-white border border-pink-100 p-4"
-                  >
-                    <div className="text-sm font-semibold text-pink-800">{item.title}</div>
-                    <div className="mt-1 text-sm text-pink-600">{item.desc}</div>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-          </div>
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+        <div className="absolute inset-0 z-0">
+          <img alt="Editorial modest fashion" className="w-full h-full object-cover brightness-90" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFq-AYjfjCxN-0i1GGqpL5A2mnk6BzHzOMuyTrGcqGLJtdlxWE0XkoQZv55UwB1kCDiuLRXVuh7tqDnOc1dDBKyWJqoL2v44wa0pZIeDC0y9exn_ZGZeMXJ6MV1XmquUsMyYjFqOnX8Pk3PYXrwKKGTM-bgNZIYeiz6R8xdgb9n3tPtV2mCtMfxjAAfo116g1VI6L7-f4WzmLmKuFJeOzVlyTmlYzdH3EDF1bhLgUBOjOC5LtuYj7uHdbYh9SDlIjatILHcp2ueL4Q" />
+          <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, transparent, rgba(254,245,240,0.4))' }}></div>
         </div>
+        <motion.div className="relative z-10 text-center px-4" initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }}>
+          <span style={{ letterSpacing: '0.4em', color: '#605a57', fontWeight: 300 }} className="text-sm uppercase mb-6 block">The Atelier of Ethereal Solstice</span>
+          <h1 style={{ fontFamily: 'Georgia, serif', fontWeight: 900, color: '#431407', lineHeight: 0.85 }} className="text-7xl md:text-9xl mb-8">THE RADIANT <br /> DUSK</h1>
+          <Link href={`/${locale}/products`} className="inline-flex items-center gap-4 px-10 py-5 rounded-full text-sm uppercase font-bold transition-all hover:opacity-90 mt-12" style={{ backgroundColor: '#a03b00', color: '#ffefea', letterSpacing: '0.15em' }}>
+            Explore the Collections →
+          </Link>
+        </motion.div>
       </section>
 
-      {/* Shop by Occasion */}
-      <section className="mx-auto max-w-6xl px-4 py-16">
-        <FadeIn>
-          <div className="flex items-end justify-between gap-4">
-            <div>
-              <h2 className="text-3xl font-semibold text-pink-900">{t('occasions_title')}</h2>
-              <p className="mt-2 text-pink-500">{t('occasions_desc')}</p>
-            </div>
-            <a href={`/${locale}/collections`} className="text-sm font-medium text-pink-500 underline underline-offset-4 hover:text-pink-700">
-              {t('view_all')}
-            </a>
+      <section className="py-32 px-8" style={{ backgroundColor: '#fef5f0' }}>
+        <div className="max-w-screen-xl mx-auto">
+          <div className="text-center mb-24">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4" style={{ color: '#322e2b' }}>Masterpiece Silhouettes</h2>
+            <div className="w-24 h-1 mx-auto" style={{ backgroundColor: '#a03b00' }}></div>
           </div>
-        </FadeIn>
-
-        <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {[
-            { slug: 'Eid', title: 'Eid', emoji: '🌙' },
-            { slug: 'Wedding', title: 'Wedding', emoji: '💍' },
-            { slug: 'Ramadan', title: 'Ramadan', emoji: '✨' },
-            { slug: 'Everyday', title: 'Everyday', emoji: '🌸' },
-          ].map((c, i) => (
-            <FadeIn key={c.slug} delay={i * 0.1}>
-              <motion.a
-                href={`/${locale}/collections/${c.slug}`}
-                whileHover={{ scale: 1.03, y: -4 }}
-                className="block rounded-2xl border border-pink-100 bg-white p-6 shadow-sm hover:shadow-md transition-shadow"
-              >
-                <div className="text-3xl">{c.emoji}</div>
-                <div className="mt-3 text-lg font-semibold text-pink-900">{c.title}</div>
-                <div className="mt-1 text-sm text-pink-500">{t('occasions_explore')}</div>
-                <div className="mt-4 text-sm font-medium text-pink-400 hover:text-pink-600">{t('browse')}</div>
-              </motion.a>
-            </FadeIn>
-          ))}
-        </div>
-      </section>
-
-      {/* Footer Banner */}
-      <section className="bg-gradient-to-r from-pink-200 to-rose-200 py-14 border-t border-pink-200">
-        <div className="mx-auto max-w-6xl px-4">
-          <div className="grid gap-6 md:grid-cols-3">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-20">
             {[
-              { title: t('shipping_title'), desc: t('shipping_desc') },
-              { title: t('returns_title'), desc: t('returns_desc') },
-              { title: t('secure_title'), desc: t('secure_desc') },
+              { name: 'The Solstice Abaya', material: 'Terracotta Fine Wool', price: '$1,240', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCO77RUh1hC_O7Vkk1kM0dPfobzkwZCCiZ5dFCNdy2RniRQDJYj3tvwJnvBpftSUJGnirmN06_iRHtVKti0DoqaBafNkS0FalxDRqPp_115zvNmyiSKgwAsxoFmRV-6og0Yp7z0jhg4V3xMS2O_5Q3uGStedzNWCERvl6xpiRTuakX19zNeosgHGwbglxmuCz7tlHd3SrKKOSMR7VGtaLAnPuH5-EZvwD65Jq4qIuqGMgGNnOHwQwzNqBjSjcwnYSVXxz1Fr8R0BVHG' },
+              { name: 'The Dusk Over-coat', material: 'Structured Cotton Twill', price: '$980', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDNuhOP6uiuXsYIokQVOAaxZkklEh4Ej_65YVh4jUfAhwKGjt67ldAPfY75y_1KNbFa419T0UrjJP0U3DjRIvSHqRC2baxUmpd-bF57YrELnQ6l1Qs4N-442ophOlzVqDSKknWRfH7USlYcwB3DZQVinDW2PcD__9Y8Lyxcp5EzTBfnSNHCX9XiGe2LU5ThBEx6pHyb36I8QcPCboVJvbyYG2zhuixBJGqTwmKfL4ZQxt-NJW-pffY9Rjad3_i6XxN_TrakJYpi0Q-N' },
+              { name: 'Celestial Silk Wrap', material: 'Artisanal Mulberry Silk', price: '$450', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBsNoEz4dnfreHvyJAqKsM70mKkN7yG3uww4aDrPiz---vaLpYHNVR10A58dLo8I3f4dv1Fe4X-p-C4sO5WwcBuf5vo72JkPbCLPbB2fgHcX4DDEtfiSE3S0MLb-ZYPgJyCoQUUgd4kMlO_Yw919-aibDy-1g-AmS7Rr6tIVh5FNmaQyS_b8eYaufD3lw-cDcZ5Zgyz-yp0qF903kEa3MwBI7o9x2TygmlSdxZApidgWr038kxil3y7zaFwUizLnz2E1XiVHR-iSNQO' },
             ].map((item, i) => (
-              <FadeIn key={item.title} delay={i * 0.15}>
-                <div className="rounded-2xl border border-pink-200 bg-white p-6 shadow-md">
-                  <div className="font-bold text-pink-900">{item.title}</div>
-                  <p className="mt-2 text-sm text-pink-500">{item.desc}</p>
+              <motion.div key={i} whileHover={{ y: -8 }} className="group">
+                <div className="relative mb-6 overflow-hidden rounded-md" style={{ aspectRatio: '4/5', backgroundColor: '#f0e6e1' }}>
+                  <img alt={item.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src={item.img} />
                 </div>
-              </FadeIn>
+                <h4 className="text-xl font-bold" style={{ color: '#322e2b' }}>{item.name}</h4>
+                <p style={{ color: '#605a57' }}>{item.material}</p>
+                <p className="font-bold mt-2" style={{ color: '#a03b00' }}>{item.price}</p>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
+
+      <footer style={{ backgroundColor: '#fff7f2' }} className="py-12 border-t border-orange-100">
+        <div className="max-w-screen-xl mx-auto px-12 flex flex-col md:flex-row justify-between items-center gap-6">
+          <p style={{ color: '#7c5c52', fontSize: '0.8rem' }}>© 2024 Ethereal Solstice. All rights reserved.</p>
+          <div className="flex gap-8">
+            <Link href={`/${locale}/products`} className="text-xs uppercase hover:opacity-70" style={{ color: '#7c5c52', letterSpacing: '0.15em' }}>Collections</Link>
+            <Link href={`/${locale}/contact`} className="text-xs uppercase hover:opacity-70" style={{ color: '#7c5c52', letterSpacing: '0.15em' }}>Contact</Link>
+          </div>
+        </div>
+      </footer>
+
     </main>
   )
 }
