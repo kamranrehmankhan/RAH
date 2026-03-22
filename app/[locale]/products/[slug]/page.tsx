@@ -8,6 +8,133 @@ import {createSupabaseServerClient} from '@/lib/supabase/server'
 
 export const dynamic = 'force-dynamic'
 
+const productCopy = {
+  en: {
+    home: 'Home',
+    collections: 'Collections',
+    detailView: 'Detail view',
+    imageSoon: 'Product image coming soon',
+    series: 'The Solstice Series',
+    priceRequest: 'Price on request',
+    featuredVariant: 'Featured Variant',
+    availableVariants: 'Available Variants',
+    pricingLater: 'Pricing will appear after variants are published.',
+    addToCollection: 'Add to Collection',
+    requestBespoke: 'Request Bespoke Quote',
+    craftTitle: 'The Craft of Equilibrium',
+    craftDesc:
+      'A garment should not just be worn; it should be inhabited. This piece is designed for fluid movement and enduring modest elegance.',
+    details: {
+      category: 'Category',
+      material: 'Material',
+      origin: 'Origin',
+      care: 'Care'
+    },
+    detailValues: {
+      categoryFallback: 'Editorial Collection',
+      materialFallback: 'Premium Heritage Fabric',
+      origin: 'Designed in the UAE',
+      care: 'Professional dry clean only'
+    },
+    conciergeTitle: 'Private Concierge',
+    conciergeDesc:
+      'Tell us your preferred fit and destination. We will confirm variant availability, tailoring, and delivery guidance.'
+  },
+  ar: {
+    home: 'الرئيسية',
+    collections: 'المجموعات',
+    detailView: 'عرض تفصيلي',
+    imageSoon: 'صورة المنتج متاحة قريبًا',
+    series: 'سلسلة السولستيس',
+    priceRequest: 'السعر عند الطلب',
+    featuredVariant: 'الخيار المميز',
+    availableVariants: 'الخيارات المتاحة',
+    pricingLater: 'سيظهر التسعير بعد نشر الخيارات.',
+    addToCollection: 'إضافة إلى المجموعة',
+    requestBespoke: 'طلب عرض مخصص',
+    craftTitle: 'حرفة الاتزان',
+    craftDesc:
+      'لا يكفي أن تُرتدى القطعة؛ بل يجب أن تُعاش. صُممت هذه القطعة لانسيابية الحركة والأناقة المحتشمة المستدامة.',
+    details: {
+      category: 'الفئة',
+      material: 'الخامة',
+      origin: 'المنشأ',
+      care: 'العناية'
+    },
+    detailValues: {
+      categoryFallback: 'مجموعة تحريرية',
+      materialFallback: 'نسيج فاخر',
+      origin: 'مصمم في الإمارات',
+      care: 'تنظيف جاف احترافي'
+    },
+    conciergeTitle: 'الكونسيرج الخاص',
+    conciergeDesc:
+      'أخبِرينا بالمقاس والوجهة المفضلة، وسنؤكد التوفر والتفصيل وإرشادات الشحن.'
+  },
+  ur: {
+    home: 'ہوم',
+    collections: 'کلیکشنز',
+    detailView: 'تفصیلی منظر',
+    imageSoon: 'مصنوعہ کی تصویر جلد دستیاب ہوگی',
+    series: 'سولسٹس سیریز',
+    priceRequest: 'قیمت درخواست پر',
+    featuredVariant: 'نمایاں ویرینٹ',
+    availableVariants: 'دستیاب ویرینٹس',
+    pricingLater: 'ویرینٹس شائع ہونے کے بعد قیمت ظاہر ہوگی۔',
+    addToCollection: 'کلیکشن میں شامل کریں',
+    requestBespoke: 'بیسپوک کوٹ کی درخواست',
+    craftTitle: 'توازن کی دستکاری',
+    craftDesc:
+      'لباس صرف پہنا نہیں جاتا بلکہ محسوس کیا جاتا ہے۔ یہ ڈیزائن روانی اور دیرپا وقار کے لیے تیار کیا گیا ہے۔',
+    details: {
+      category: 'زمرہ',
+      material: 'میٹیریل',
+      origin: 'اصل',
+      care: 'نگہداشت'
+    },
+    detailValues: {
+      categoryFallback: 'ایڈیٹوریل کلیکشن',
+      materialFallback: 'پریمیم ہیریٹیج فیبرک',
+      origin: 'UAE میں ڈیزائن کیا گیا',
+      care: 'پروفیشنل ڈرائی کلین'
+    },
+    conciergeTitle: 'پرائیویٹ کنسئیرج',
+    conciergeDesc:
+      'اپنا پسندیدہ فِٹ اور منزل بتائیں، ہم دستیابی اور ٹیلرنگ رہنمائی کی تصدیق کریں گے۔'
+  },
+  fr: {
+    home: 'Accueil',
+    collections: 'Collections',
+    detailView: 'Vue détaillée',
+    imageSoon: 'Image produit bientôt disponible',
+    series: 'Série Solstice',
+    priceRequest: 'Prix sur demande',
+    featuredVariant: 'Variante Vedette',
+    availableVariants: 'Variantes Disponibles',
+    pricingLater: 'Les prix apparaîtront après publication des variantes.',
+    addToCollection: 'Ajouter à la Collection',
+    requestBespoke: 'Demander un Devis Bespoke',
+    craftTitle: "L'Art de l'Équilibre",
+    craftDesc:
+      'Un vêtement ne se porte pas seulement, il se vit. Cette pièce est pensée pour un mouvement fluide et une élégance durable.',
+    details: {
+      category: 'Catégorie',
+      material: 'Matière',
+      origin: 'Origine',
+      care: 'Entretien'
+    },
+    detailValues: {
+      categoryFallback: 'Collection Éditoriale',
+      materialFallback: 'Tissu Patrimonial Premium',
+      origin: 'Conçu aux EAU',
+      care: 'Nettoyage à sec professionnel'
+    },
+    conciergeTitle: 'Conciergerie Privée',
+    conciergeDesc:
+      'Indiquez votre coupe souhaitée et votre destination. Nous confirmerons disponibilité et conseils de livraison.'
+  }
+} as const
+
 function safeJsonStringify(value: any) {
   return JSON.stringify(value).replace(/</g, '\\u003c')
 }
@@ -18,6 +145,7 @@ export default async function ProductPage({
   params: {locale: string; slug: string}
 }) {
   const {slug, locale} = params
+  const copy = productCopy[(locale in productCopy ? locale : 'en') as keyof typeof productCopy]
 
   const supabase = await createSupabaseServerClient()
 
@@ -99,13 +227,13 @@ export default async function ProductPage({
       {
         '@type': 'ListItem',
         position: 1,
-        name: 'Home',
+        name: copy.home,
         item: `${baseUrl}/${locale}`
       },
       {
         '@type': 'ListItem',
         position: 2,
-        name: 'Collections',
+        name: copy.collections,
         item: `${baseUrl}/${locale}/collections`
       },
       {
@@ -128,10 +256,16 @@ export default async function ProductPage({
   const heroImage = imageList[0]
   const sideImages = imageList.slice(1, 3)
   const detailsRows = [
-    {label: 'Category', value: product.category || 'Editorial Collection'},
-    {label: 'Material', value: product.material || 'Premium Heritage Fabric'},
-    {label: 'Origin', value: 'Designed in the UAE'},
-    {label: 'Care', value: 'Professional dry clean only'}
+    {
+      label: copy.details.category,
+      value: product.category || copy.detailValues.categoryFallback
+    },
+    {
+      label: copy.details.material,
+      value: product.material || copy.detailValues.materialFallback
+    },
+    {label: copy.details.origin, value: copy.detailValues.origin},
+    {label: copy.details.care, value: copy.detailValues.care}
   ]
 
   return (
@@ -157,7 +291,7 @@ export default async function ProductPage({
               />
             ) : (
               <div className="flex h-full items-center justify-center text-sm text-on-surface-variant">
-                Product image coming soon
+                {copy.imageSoon}
               </div>
             )}
           </div>
@@ -185,7 +319,7 @@ export default async function ProductPage({
                     key={`placeholder-${idx}`}
                     className="flex aspect-[4/5] items-center justify-center rounded-xl bg-surface-container text-sm text-on-surface-variant"
                   >
-                    Detail view
+                    {copy.detailView}
                   </div>
                 ))}
           </div>
@@ -194,7 +328,7 @@ export default async function ProductPage({
         <div className="flex flex-col lg:sticky lg:top-24 lg:col-span-5">
           <div className="space-y-5">
             <p className="font-headline text-xs font-bold uppercase tracking-[0.3em] text-primary">
-              {product.category || 'The Solstice Series'}
+              {product.category || copy.series}
             </p>
             <h1 className="font-headline text-4xl font-black leading-tight tracking-tight text-on-surface md:text-5xl">
               {product.title}
@@ -203,11 +337,11 @@ export default async function ProductPage({
               <span className="font-headline text-3xl font-semibold text-primary">
                 {defaultVariant
                   ? `${defaultVariant.currency} ${Number(defaultVariant.price).toFixed(2)}`
-                  : 'Price on request'}
+                  : copy.priceRequest}
               </span>
               {defaultVariant ? (
                 <span className="rounded bg-primary/10 px-2 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-primary">
-                  Featured Variant
+                  {copy.featuredVariant}
                 </span>
               ) : null}
             </div>
@@ -218,12 +352,12 @@ export default async function ProductPage({
 
           <section className="mt-10">
             <h2 className="font-headline text-xs font-bold uppercase tracking-[0.25em] text-on-surface">
-              Available Variants
+              {copy.availableVariants}
             </h2>
             <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
               {variantList.length === 0 ? (
                 <div className="rounded-xl border border-outline-variant/40 bg-surface-container-low p-4 text-sm text-on-surface-variant">
-                  Pricing will appear after variants are published.
+                  {copy.pricingLater}
                 </div>
               ) : (
                 variantList.map((variant) => (
@@ -252,23 +386,22 @@ export default async function ProductPage({
               href={`/${locale}/checkout`}
               className="rounded-full bg-primary px-6 py-4 text-center font-headline text-xs font-bold uppercase tracking-[0.2em] text-on-primary transition-colors hover:bg-primary-dim"
             >
-              Add to Collection
+              {copy.addToCollection}
             </Link>
             <Link
               href={`/${locale}/quote`}
               className="rounded-full border border-outline-variant px-6 py-4 text-center font-headline text-xs font-bold uppercase tracking-[0.2em] text-on-surface transition-colors hover:border-primary hover:text-primary"
             >
-              Request Bespoke Quote
+              {copy.requestBespoke}
             </Link>
           </div>
 
           <section className="mt-12 rounded-2xl border border-outline-variant/30 bg-surface-container-low p-6">
             <h2 className="font-headline text-xl font-bold text-on-surface">
-              The Craft of Equilibrium
+              {copy.craftTitle}
             </h2>
             <p className="mt-3 text-sm leading-relaxed text-on-surface-variant">
-              A garment should not just be worn; it should be inhabited. This
-              piece is designed for fluid movement and enduring modest elegance.
+              {copy.craftDesc}
             </p>
             <div className="mt-6 space-y-3">
               {detailsRows.map((row) => (
@@ -290,11 +423,10 @@ export default async function ProductPage({
       <section className="mx-auto mt-16 grid max-w-screen-2xl gap-6 lg:grid-cols-2">
         <div className="rounded-2xl border border-outline-variant/30 bg-surface-container-low p-6">
           <h2 className="font-headline text-xl font-bold text-on-surface">
-            Private Concierge
+            {copy.conciergeTitle}
           </h2>
           <p className="mt-2 text-sm text-on-surface-variant">
-            Tell us your preferred fit and destination. We will confirm variant
-            availability, tailoring, and delivery guidance.
+            {copy.conciergeDesc}
           </p>
         </div>
         <div className="rounded-2xl border border-outline-variant/30 bg-surface-container-low p-6">

@@ -7,6 +7,45 @@ import {useMemo} from 'react'
 const LOCALES = ['en', 'ar', 'ur', 'fr'] as const
 type Locale = (typeof LOCALES)[number]
 
+const headerCopy = {
+  en: {
+    brand: 'ETHEREAL SOLSTICE',
+    coutureCollections: 'Couture Collections',
+    journal: 'The Journal',
+    ethicalCraft: 'Ethical Craft',
+    archive: 'Archive',
+    checkout: 'Checkout',
+    quote: 'Quote'
+  },
+  ar: {
+    brand: 'إيثيريال سولستيس',
+    coutureCollections: 'المجموعات الراقية',
+    journal: 'المجلة',
+    ethicalCraft: 'الحرفة الأخلاقية',
+    archive: 'الأرشيف',
+    checkout: 'الدفع',
+    quote: 'عرض سعر'
+  },
+  ur: {
+    brand: 'ایتھیریل سولسٹس',
+    coutureCollections: 'کوتور کلیکشنز',
+    journal: 'جرنل',
+    ethicalCraft: 'اخلاقی دستکاری',
+    archive: 'آرکائیو',
+    checkout: 'چیک آؤٹ',
+    quote: 'کوٹ'
+  },
+  fr: {
+    brand: 'ETHEREAL SOLSTICE',
+    coutureCollections: 'Collections Couture',
+    journal: 'Le Journal',
+    ethicalCraft: 'Artisanat Éthique',
+    archive: 'Archives',
+    checkout: 'Paiement',
+    quote: 'Devis'
+  }
+} as const
+
 export default function SiteHeader({locale}: {locale: Locale}) {
   const router = useRouter()
   const pathname = usePathname()
@@ -26,11 +65,13 @@ export default function SiteHeader({locale}: {locale: Locale}) {
     router.push(next)
   }
 
+  const copy = headerCopy[locale] ?? headerCopy.en
+
   const navItems = [
-    {label: 'Couture Collections', href: `/${locale}/collections`, key: 'collections'},
-    {label: 'The Journal', href: `/${locale}/about`, key: 'about'},
-    {label: 'Ethical Craft', href: `/${locale}/shipping-returns`, key: 'shipping-returns'},
-    {label: 'Archive', href: `/${locale}/orders`, key: 'orders'}
+    {label: copy.coutureCollections, href: `/${locale}/collections`, key: 'collections'},
+    {label: copy.journal, href: `/${locale}/about`, key: 'about'},
+    {label: copy.ethicalCraft, href: `/${locale}/shipping-returns`, key: 'shipping-returns'},
+    {label: copy.archive, href: `/${locale}/orders`, key: 'orders'}
   ]
 
   const activeSegment = restPath.split('/')[0] ?? ''
@@ -43,7 +84,7 @@ export default function SiteHeader({locale}: {locale: Locale}) {
             href={`/${locale}`}
             className="font-headline text-lg font-black tracking-tight text-orange-950 md:text-xl"
           >
-            ETHEREAL SOLSTICE
+            {copy.brand}
           </Link>
           <nav className="hidden items-center gap-7 lg:flex">
             {navItems.map((item) => (
@@ -66,13 +107,13 @@ export default function SiteHeader({locale}: {locale: Locale}) {
             href={`/${locale}/checkout`}
             className="hidden rounded-full bg-primary px-5 py-2 font-headline text-xs uppercase tracking-[0.18em] text-on-primary transition-colors hover:bg-primary-dim md:inline-block"
           >
-            Checkout
+            {copy.checkout}
           </Link>
           <Link
             href={`/${locale}/quote`}
             className="hidden rounded-full border border-outline-variant px-4 py-2 font-headline text-[11px] uppercase tracking-[0.16em] text-on-surface transition-colors hover:border-primary hover:text-primary md:inline-block"
           >
-            Quote
+            {copy.quote}
           </Link>
           <select
             value={locale}
