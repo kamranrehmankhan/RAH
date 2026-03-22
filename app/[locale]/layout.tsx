@@ -23,14 +23,14 @@ export default async function LocaleLayout({
   const organizationJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    name: 'Abayas',
+    name: 'Ethereal Solstice',
     url: siteUrl.replace(/\/+$/, ''),
     description:
-      'Premium abayas with worldwide shipping and clear variant pricing.'
+      'World-class luxury modest abayas with worldwide shipping.'
   }
 
   return (
-    <div dir={dir} className="min-h-screen bg-pink-50 text-pink-900">
+    <div dir={dir} className="min-h-screen bg-background text-on-surface">
       <NextIntlClientProvider locale={locale} messages={messages}>
         <script
           type="application/ld+json"
@@ -45,4 +45,3 @@ export default async function LocaleLayout({
     </div>
   )
 }
-

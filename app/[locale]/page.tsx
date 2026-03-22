@@ -20,7 +20,7 @@ export async function generateMetadata({
   return buildPageMetadata({
     locale,
     restPath: '',
-    title: 'Abayas for the World | Abayas',
-    description: 'Premium abayas with worldwide shipping.'
+    title: 'ETHEREAL SOLSTICE | The Radiant Abaya',
+    description: 'World-class luxury modest abayas. Consciously crafted for the global soul.'
   })
 }

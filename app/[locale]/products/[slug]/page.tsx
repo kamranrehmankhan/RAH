@@ -1,9 +1,10 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import {notFound} from 'next/navigation'
 
-import {createSupabaseServerClient} from '@/lib/supabase/server'
 import QuoteForm from '@/components/quote/QuoteForm'
 import {buildPageMetadata, getLocaleFromString} from '@/lib/seo/metadata'
+import {createSupabaseServerClient} from '@/lib/supabase/server'
 
 export const dynamic = 'force-dynamic'
 
@@ -124,109 +125,182 @@ export default async function ProductPage({
     ]
   }
 
-  const jsonLd = [productJsonLd, breadcrumbJsonLd]
-
-  const metaTitle = product.seo_title ?? product.title
-  const metaDescription = product.seo_description ?? product.description
+  const heroImage = imageList[0]
+  const sideImages = imageList.slice(1, 3)
+  const detailsRows = [
+    {label: 'Category', value: product.category || 'Editorial Collection'},
+    {label: 'Material', value: product.material || 'Premium Heritage Fabric'},
+    {label: 'Origin', value: 'Designed in the UAE'},
+    {label: 'Care', value: 'Professional dry clean only'}
+  ]
 
   return (
-    <main className="mx-auto max-w-6xl px-4 py-10">
+    <main className="bg-surface px-6 pb-24 pt-14 md:px-10">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{__html: safeJsonStringify(jsonLd)}}
+        dangerouslySetInnerHTML={{
+          __html: safeJsonStringify([productJsonLd, breadcrumbJsonLd])
+        }}
       />
 
-      <div className="flex flex-wrap items-start justify-between gap-6">
-        <div>
-          <h1 className="text-3xl font-semibold tracking-tight">
-            {product.title}
-          </h1>
-          <div className="mt-2 text-sm text-pink-600 ">
-            {product.category}
-            {product.material ? ` • ${product.material}` : ''}
-          </div>
-          <p className="mt-4 max-w-2xl text-slate-700 ">
-            {product.description}
-          </p>
-        </div>
-
-        <div className="w-full max-w-sm rounded-xl border border-pink-100 bg-pink-50 p-4  ">
-          <div className="text-sm font-semibold">Variant pricing</div>
-          <div className="mt-3 space-y-3">
-            {variantList.length === 0 ? (
-              <div className="text-sm text-pink-600 ">
-                Pricing will appear after admin adds variants.
-              </div>
+      <div className="mx-auto grid max-w-screen-2xl grid-cols-1 items-start gap-12 lg:grid-cols-12 lg:gap-16">
+        <div className="space-y-8 lg:col-span-7">
+          <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-surface-container">
+            {storageBaseUrl && heroImage ? (
+              <Image
+                src={`${storageBaseUrl}/${heroImage.storage_path}`}
+                alt={heroImage.alt_text ?? product.title}
+                fill
+                priority
+                sizes="(max-width: 1200px) 100vw, 58vw"
+                className="object-cover"
+              />
             ) : (
-              variantList.map((v) => (
-                <div
-                  key={v.id}
-                  className="flex items-start justify-between gap-4"
-                >
-                  <div className="text-sm">
-                    <div className="font-medium">{v.label}</div>
-                    <div className="mt-0.5 text-xs text-pink-600 ">
-                      {v.is_default ? 'Default' : 'Option'}
-                    </div>
-                  </div>
-                  <div className="text-right text-sm font-semibold">
-                    {v.currency} {Number(v.price).toFixed(2)}
-                  </div>
-                </div>
-              ))
+              <div className="flex h-full items-center justify-center text-sm text-on-surface-variant">
+                Product image coming soon
+              </div>
             )}
           </div>
+
+          <div className="grid grid-cols-2 gap-6">
+            {sideImages.length > 0
+              ? sideImages.map((img) => (
+                  <div
+                    key={img.storage_path}
+                    className="relative aspect-[4/5] overflow-hidden rounded-xl bg-surface-container"
+                  >
+                    {storageBaseUrl ? (
+                      <Image
+                        src={`${storageBaseUrl}/${img.storage_path}`}
+                        alt={img.alt_text ?? product.title}
+                        fill
+                        sizes="(max-width: 768px) 50vw, 25vw"
+                        className="object-cover"
+                      />
+                    ) : null}
+                  </div>
+                ))
+              : [0, 1].map((idx) => (
+                  <div
+                    key={`placeholder-${idx}`}
+                    className="flex aspect-[4/5] items-center justify-center rounded-xl bg-surface-container text-sm text-on-surface-variant"
+                  >
+                    Detail view
+                  </div>
+                ))}
+          </div>
+        </div>
+
+        <div className="flex flex-col lg:sticky lg:top-24 lg:col-span-5">
+          <div className="space-y-5">
+            <p className="font-headline text-xs font-bold uppercase tracking-[0.3em] text-primary">
+              {product.category || 'The Solstice Series'}
+            </p>
+            <h1 className="font-headline text-4xl font-black leading-tight tracking-tight text-on-surface md:text-5xl">
+              {product.title}
+            </h1>
+            <div className="flex flex-wrap items-center gap-4">
+              <span className="font-headline text-3xl font-semibold text-primary">
+                {defaultVariant
+                  ? `${defaultVariant.currency} ${Number(defaultVariant.price).toFixed(2)}`
+                  : 'Price on request'}
+              </span>
+              {defaultVariant ? (
+                <span className="rounded bg-primary/10 px-2 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-primary">
+                  Featured Variant
+                </span>
+              ) : null}
+            </div>
+            <p className="leading-relaxed text-on-surface-variant">
+              {product.description}
+            </p>
+          </div>
+
+          <section className="mt-10">
+            <h2 className="font-headline text-xs font-bold uppercase tracking-[0.25em] text-on-surface">
+              Available Variants
+            </h2>
+            <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
+              {variantList.length === 0 ? (
+                <div className="rounded-xl border border-outline-variant/40 bg-surface-container-low p-4 text-sm text-on-surface-variant">
+                  Pricing will appear after variants are published.
+                </div>
+              ) : (
+                variantList.map((variant) => (
+                  <div
+                    key={variant.id}
+                    className={`rounded-xl border p-4 ${
+                      variant.is_default
+                        ? 'border-primary bg-primary/5'
+                        : 'border-outline-variant/40 bg-surface-container-low'
+                    }`}
+                  >
+                    <p className="font-headline text-sm font-bold uppercase tracking-[0.14em] text-on-surface">
+                      {variant.label}
+                    </p>
+                    <p className="mt-2 text-sm text-on-surface-variant">
+                      {variant.currency} {Number(variant.price).toFixed(2)}
+                    </p>
+                  </div>
+                ))
+              )}
+            </div>
+          </section>
+
+          <div className="mt-10 grid grid-cols-1 gap-3 sm:grid-cols-2">
+            <Link
+              href={`/${locale}/checkout`}
+              className="rounded-full bg-primary px-6 py-4 text-center font-headline text-xs font-bold uppercase tracking-[0.2em] text-on-primary transition-colors hover:bg-primary-dim"
+            >
+              Add to Collection
+            </Link>
+            <Link
+              href={`/${locale}/quote`}
+              className="rounded-full border border-outline-variant px-6 py-4 text-center font-headline text-xs font-bold uppercase tracking-[0.2em] text-on-surface transition-colors hover:border-primary hover:text-primary"
+            >
+              Request Bespoke Quote
+            </Link>
+          </div>
+
+          <section className="mt-12 rounded-2xl border border-outline-variant/30 bg-surface-container-low p-6">
+            <h2 className="font-headline text-xl font-bold text-on-surface">
+              The Craft of Equilibrium
+            </h2>
+            <p className="mt-3 text-sm leading-relaxed text-on-surface-variant">
+              A garment should not just be worn; it should be inhabited. This
+              piece is designed for fluid movement and enduring modest elegance.
+            </p>
+            <div className="mt-6 space-y-3">
+              {detailsRows.map((row) => (
+                <div
+                  key={row.label}
+                  className="flex items-start justify-between gap-4 border-b border-outline-variant/20 pb-3 text-sm"
+                >
+                  <span className="font-headline text-[10px] font-bold uppercase tracking-[0.22em] text-on-surface-variant">
+                    {row.label}
+                  </span>
+                  <span className="text-right text-on-surface">{row.value}</span>
+                </div>
+              ))}
+            </div>
+          </section>
         </div>
       </div>
 
-      <section className="mt-10">
-        <h2 className="text-lg font-semibold">Gallery</h2>
-
-        {storageBaseUrl && imageList.length > 0 ? (
-          <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {imageList.map((img) => (
-              <div
-                key={img.storage_path}
-                className="relative aspect-[4/5] overflow-hidden rounded-xl border border-pink-100 "
-              >
-                <Image
-                  src={`${storageBaseUrl}/${img.storage_path}`}
-                  alt={img.alt_text ?? product.title}
-                  fill
-                  sizes="(max-width: 768px) 50vw, 33vw"
-                  className="object-cover"
-                />
-              </div>
-            ))}
-          </div>
-        ) : (
-          <div className="mt-4 rounded-xl border border-pink-100 bg-pink-50 p-6 text-sm text-pink-600   ">
-            No images yet for this product. Upload pictures in the admin
-            product editor.
-          </div>
-        )}
-      </section>
-
-      <section className="mt-10 grid gap-6 lg:grid-cols-2">
-        <div className="rounded-xl border border-pink-100 bg-pink-50 p-5  ">
-          <h2 className="text-lg font-semibold">Request a quote</h2>
-          <p className="mt-1 text-sm text-pink-600 ">
-            Tell us your variant and country. We’ll reply with shipping details
-            and final pricing.
+      <section className="mx-auto mt-16 grid max-w-screen-2xl gap-6 lg:grid-cols-2">
+        <div className="rounded-2xl border border-outline-variant/30 bg-surface-container-low p-6">
+          <h2 className="font-headline text-xl font-bold text-on-surface">
+            Private Concierge
+          </h2>
+          <p className="mt-2 text-sm text-on-surface-variant">
+            Tell us your preferred fit and destination. We will confirm variant
+            availability, tailoring, and delivery guidance.
           </p>
         </div>
-
-        <div className="rounded-xl border border-pink-100 bg-pink-50 p-5  ">
-          <QuoteForm
-            productId={product.id}
-            variantId={defaultVariant?.id}
-          />
+        <div className="rounded-2xl border border-outline-variant/30 bg-surface-container-low p-6">
+          <QuoteForm productId={product.id} variantId={defaultVariant?.id} />
         </div>
       </section>
-
-      {/* Placeholder SEO fields (kept here until we generate per-locale metadata hooks) */}
-      <div className="sr-only">{metaTitle}</div>
-      <div className="sr-only">{metaDescription}</div>
     </main>
   )
 }
@@ -298,4 +372,3 @@ export async function generateMetadata({
     })
   }
 }
-
