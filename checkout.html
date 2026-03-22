@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Secure Checkout | ETHEREAL SOLSTICE</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#F26419",
+              "on-primary": "#ffffff",
+              "primary-container": "#FFDBCB",
+              "on-primary-container": "#341100",
+              secondary: "#8B4513",
+              "on-secondary": "#ffffff",
+              "secondary-container": "#FFDBCB",
+              tertiary: "#DAA520",
+              "on-tertiary": "#ffffff",
+              background: "#FFFBF7",
+              "on-background": "#241A14",
+              surface: "#FFFBF7",
+              "on-surface": "#241A14",
+              "surface-variant": "#F4E0D6",
+              "on-surface-variant": "#52443C",
+              outline: "#85736B",
+              "outline-variant": "#D7C2B9",
+              "surface-container-low": "#FEF1E9",
+              "surface-container-high": "#F8E9E1",
+              "surface-container-highest": "#F2E2D9",
+              "surface-container-lowest": "#FFFFFF"
+            },
+            fontFamily: {
+              headline: ["Epilogue", "sans-serif"],
+              body: ["Epilogue", "sans-serif"],
+              label: ["Epilogue", "sans-serif"]
+            },
+            borderRadius: { DEFAULT: "2rem", lg: "2.5rem", xl: "4rem", full: "9999px" }
+          }
+        }
+      };
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24;
+      }
+      body {
+        background-color: #fffbf7;
+        color: #241a14;
+        font-family: "Epilogue", sans-serif;
+        letter-spacing: -0.01em;
+      }
+      .editorial-shadow {
+        box-shadow: 0 40px 80px rgba(139, 69, 19, 0.06);
+      }
+      input::placeholder {
+        color: rgba(82, 68, 60, 0.3);
+      }
+    </style>
+  </head>
+  <body class="bg-background text-on-background selection:bg-primary-container selection:text-on-primary-container">
+    <nav class="fixed top-0 z-50 flex h-20 w-full items-center justify-center border-b border-outline-variant/20 bg-background/90 px-8 backdrop-blur-xl md:h-24">
+      <div class="flex w-full max-w-7xl items-center justify-between">
+        <a class="font-headline text-xl font-bold uppercase tracking-tighter text-on-surface md:text-2xl" href="index.html">ETHEREAL SOLSTICE</a>
+        <a class="group flex items-center gap-2 font-label text-[10px] uppercase tracking-[0.25em] text-on-surface-variant transition-all hover:text-primary" href="product.html">
+          <span class="material-symbols-outlined text-sm transition-transform group-hover:-translate-x-1">arrow_back</span>
+          Return to Cart
+        </a>
+      </div>
+    </nav>
+    <main class="mx-auto max-w-7xl px-6 pb-24 pt-32 md:px-12 lg:px-20">
+      <div class="mb-16 flex items-center justify-center gap-4 md:mb-24 md:gap-8">
+        <div class="flex items-center gap-3">
+          <span class="flex h-8 w-8 items-center justify-center rounded-full bg-primary text-xs font-bold text-on-primary">1</span>
+          <span class="font-headline text-[11px] font-bold uppercase tracking-widest text-primary">Shipping</span>
+        </div>
+        <div class="h-[1px] w-8 bg-outline-variant/40 md:w-16"></div>
+        <div class="flex items-center gap-3">
+          <span class="flex h-8 w-8 items-center justify-center rounded-full bg-surface-container-high text-xs font-bold text-on-surface-variant/40">2</span>
+          <span class="font-headline text-[11px] font-bold uppercase tracking-widest text-on-surface-variant/40">Payment</span>
+        </div>
+        <div class="h-[1px] w-8 bg-outline-variant/40 md:w-16"></div>
+        <div class="flex items-center gap-3">
+          <span class="flex h-8 w-8 items-center justify-center rounded-full bg-surface-container-high text-xs font-bold text-on-surface-variant/40">3</span>
+          <span class="font-headline text-[11px] font-bold uppercase tracking-widest text-on-surface-variant/40">Review</span>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 items-start gap-16 lg:grid-cols-12 lg:gap-24">
+        <div class="space-y-20 md:space-y-28 lg:col-span-7">
+          <section>
+            <div class="mb-10 flex items-baseline justify-between md:mb-14">
+              <h2 class="font-headline text-3xl font-bold tracking-tight md:text-4xl">Shipping Destination</h2>
+              <span class="font-label text-[10px] font-bold uppercase tracking-[0.3em] text-on-surface-variant/40">Step 01</span>
+            </div>
+            <div class="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-12">
+              <div class="space-y-3 md:col-span-2">
+                <label class="ml-2 font-label text-[10px] font-bold uppercase tracking-[0.2em] text-on-surface-variant/60">Full Name</label>
+                <input class="w-full rounded-t-[2.5rem] border-0 border-b border-outline-variant/40 bg-surface-container-low px-8 py-6 text-lg focus:border-primary focus:ring-0" placeholder="Sarah Mitchell" type="text" />
+              </div>
+              <div class="space-y-3 md:col-span-2">
+                <label class="ml-2 font-label text-[10px] font-bold uppercase tracking-[0.2em] text-on-surface-variant/60">Delivery Address</label>
+                <input class="w-full rounded-t-[2.5rem] border-0 border-b border-outline-variant/40 bg-surface-container-low px-8 py-6 text-lg focus:border-primary focus:ring-0" placeholder="124 Editorial Avenue, Suite 400" type="text" />
+              </div>
+              <div class="space-y-3">
+                <label class="ml-2 font-label text-[10px] font-bold uppercase tracking-[0.2em] text-on-surface-variant/60">Email Address</label>
+                <input class="w-full rounded-t-[2.5rem] border-0 border-b border-outline-variant/40 bg-surface-container-low px-8 py-6 text-lg focus:border-primary focus:ring-0" placeholder="sarah@ethereal.com" type="email" />
+              </div>
+              <div class="space-y-3">
+                <label class="ml-2 font-label text-[10px] font-bold uppercase tracking-[0.2em] text-on-surface-variant/60">Phone Number</label>
+                <input class="w-full rounded-t-[2.5rem] border-0 border-b border-outline-variant/40 bg-surface-container-low px-8 py-6 text-lg focus:border-primary focus:ring-0" placeholder="+1 (555) 000-0000" type="tel" />
+              </div>
+            </div>
+          </section>
+          <section>
+            <div class="mb-10 flex items-baseline justify-between md:mb-14">
+              <h2 class="font-headline text-3xl font-bold tracking-tight md:text-4xl">Preferred Logistics</h2>
+              <span class="font-label text-[10px] font-bold uppercase tracking-[0.3em] text-on-surface-variant/40">Step 02</span>
+            </div>
+            <div class="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
+              <label class="group relative cursor-pointer">
+                <input checked class="peer sr-only" name="delivery" type="radio" />
+                <div class="flex flex-col gap-2 rounded-[2.5rem] border border-outline-variant/20 bg-surface-container-low p-8 transition-all peer-checked:border-primary peer-checked:bg-surface-container-highest md:p-10">
+                  <div class="flex items-center justify-between">
+                    <span class="font-headline text-lg font-bold">Standard Silk</span>
+                    <span class="font-bold text-primary">$12.00</span>
+                  </div>
+                  <span class="text-sm italic text-on-surface-variant/60">3-5 Business Days</span>
+                </div>
+              </label>
+              <label class="group relative cursor-pointer">
+                <input class="peer sr-only" name="delivery" type="radio" />
+                <div class="flex flex-col gap-2 rounded-[2.5rem] border border-outline-variant/20 bg-surface-container-low p-8 transition-all peer-checked:border-primary peer-checked:bg-surface-container-highest md:p-10">
+                  <div class="flex items-center justify-between">
+                    <span class="font-headline text-lg font-bold">Dusk Priority</span>
+                    <span class="font-bold text-primary">$35.00</span>
+                  </div>
+                  <span class="text-sm italic text-on-surface-variant/60">Next Day Delivery</span>
+                </div>
+              </label>
+            </div>
+          </section>
+        </div>
+        <div class="lg:col-span-5">
+          <div class="editorial-shadow rounded-[4.5rem] border border-outline-variant/10 bg-surface-container-low p-10 md:p-14 lg:sticky lg:top-40">
+            <h3 class="mb-14 font-headline text-2xl font-bold tracking-tight md:text-3xl">Order Portfolio</h3>
+            <div class="mb-14 space-y-12">
+              <div class="flex gap-8">
+                <div class="h-32 w-24 flex-shrink-0 overflow-hidden rounded-[2rem] bg-surface-container-highest md:h-36 md:w-28">
+                  <img alt="Elegant autumn whisper abaya" class="h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVhFP_xiqNipgIH4s5mmoBejS96IqjnsGjfIFWClAKLW1v7G7GbaMMm8XNq0Z0YltPFyMhnDqPFZbotG5_jIQ_aEtKkau-YP5HRxDAfm4JP6WBsm_tAEHB-v4j0mqe8wgKv9JPbWP_veRCvZpQzMfMN8y9FBOKuIJGmCzU-9DK1K2GcpwOiieYOIkK6LX8IfcoBGU0OikOxYbFdTDcfOSzGoisH-q0VLh6Ffd2xTgrxsFCMGCHtsp5DpaBsoiyRJ0kYDnGpt4Ve9jF" />
+                </div>
+                <div class="flex flex-grow flex-col justify-center">
+                  <h4 class="font-headline text-lg font-bold text-on-surface">Autumn Whisper Abaya</h4>
+                  <p class="mt-2 font-label text-[10px] font-bold uppercase tracking-[0.25em] text-on-surface-variant/50">Midnight Oak / Extra Large</p>
+                  <p class="mt-4 text-xl font-bold text-primary">$285.00</p>
+                </div>
+              </div>
+              <div class="flex gap-8">
+                <div class="h-32 w-24 flex-shrink-0 overflow-hidden rounded-[2rem] bg-surface-container-highest md:h-36 md:w-28">
+                  <img alt="Radiant silk scarf" class="h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuASXaLRXuCKAfeMaQ0pi9pDJdGrBiqM11Sspc3fdM2qtUnpMVhq2GKo3umRzVqHC0e4nxLuyf-3ve_alvpXxmmkXa7y3JGUsfvTxYFQYodJXi51sGq3ojgmodyJZloR7MTKK2rDHwvRjROzRjFop9ULelCx0jhxQ8_p75jo_gB5ZjRqPl0rFG1q4uc1x78EzYiOp2-eTi-PdquT68hv0J680CRCtdXm8rR1EXk_ELFWMgR87DcxXpOHG6_Zq8sd_LojdjSb4gYawZeP" />
+                </div>
+                <div class="flex flex-grow flex-col justify-center">
+                  <h4 class="font-headline text-lg font-bold text-on-surface">Dusk Silk Scarf</h4>
+                  <p class="mt-2 font-label text-[10px] font-bold uppercase tracking-[0.25em] text-on-surface-variant/50">Amber Dust / Universal Size</p>
+                  <p class="mt-4 text-xl font-bold text-primary">$85.00</p>
+                </div>
+              </div>
+            </div>
+            <div class="space-y-6 border-t border-outline-variant/20 pt-12">
+              <div class="flex justify-between text-on-surface-variant/70"><span>Subtotal</span><span class="font-headline font-bold">$370.00</span></div>
+              <div class="flex justify-between text-on-surface-variant/70"><span>Logistics</span><span class="font-headline font-bold">$12.00</span></div>
+              <div class="flex justify-between text-on-surface-variant/70"><span>Value Added Tax</span><span class="font-headline font-bold">$31.45</span></div>
+              <div class="flex items-baseline justify-between border-t border-outline-variant/30 pt-10">
+                <span class="font-headline text-2xl font-bold">Total Portfolio</span>
+                <div class="text-right">
+                  <span class="font-headline text-4xl font-extrabold tracking-tighter text-primary md:text-5xl">$413.45</span>
+                  <p class="mt-1 font-label text-[9px] font-bold uppercase tracking-[0.3em] text-on-surface-variant/40">USD (VAT Inclusive)</p>
+                </div>
+              </div>
+            </div>
+            <button class="mt-14 flex w-full items-center justify-center gap-4 rounded-full bg-primary py-7 font-headline text-sm font-bold uppercase tracking-[0.4em] text-white shadow-2xl shadow-primary/20 transition-all hover:-translate-y-1 hover:shadow-primary/40 active:translate-y-0">Confirm Purchase <span class="material-symbols-outlined text-lg">verified</span></button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

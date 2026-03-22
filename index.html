@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>ETHEREAL SOLSTICE | The Radiant Abaya</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Epilogue:wght@300;400;700;800;900&family=Manrope:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-surface-variant": "#605a57",
+              "error-dim": "#9f0519",
+              "error-container": "#fb5151",
+              "surface-container-low": "#f9efea",
+              "secondary-fixed-dim": "#ffb19a",
+              "primary-fixed-dim": "#f6671c",
+              "surface-variant": "#e5dbd5",
+              "error": "#b31b25",
+              "primary-dim": "#8c3300",
+              "primary": "#a03b00",
+              "on-error": "#ffefee",
+              "secondary": "#a13917",
+              "tertiary-fixed-dim": "#edb210",
+              "on-primary": "#ffefea",
+              "on-tertiary-fixed-variant": "#614700",
+              "on-background": "#322e2b",
+              "primary-fixed": "#ff793b",
+              "on-primary-container": "#421400",
+              "on-primary-fixed-variant": "#521a00",
+              "on-tertiary-container": "#563e00",
+              "on-secondary": "#ffefeb",
+              "primary-container": "#ff793b",
+              "outline": "#7c7572",
+              "secondary-fixed": "#ffc4b3",
+              "secondary-container": "#ffc4b3",
+              "surface-tint": "#a03b00",
+              "surface-container-high": "#ebe0db",
+              "on-tertiary-fixed": "#3d2b00",
+              "surface-container": "#f0e6e1",
+              "surface-bright": "#fef5f0",
+              "on-surface": "#322e2b",
+              "surface": "#fef5f0",
+              "surface-container-lowest": "#ffffff",
+              "on-secondary-container": "#852503",
+              "tertiary-dim": "#674b00",
+              "secondary-dim": "#912d0b",
+              "inverse-surface": "#110e0b",
+              "tertiary-container": "#fcc025",
+              "inverse-on-surface": "#a39b97",
+              "on-secondary-fixed-variant": "#922e0c",
+              "surface-container-highest": "#e5dbd5",
+              "on-error-container": "#570008",
+              "tertiary-fixed": "#fcc025",
+              "on-primary-fixed": "#000000",
+              "outline-variant": "#b3aca7",
+              "on-tertiary": "#fff1db",
+              "surface-dim": "#ddd2cc",
+              "on-secondary-fixed": "#651800",
+              "tertiary": "#755600",
+              "inverse-primary": "#f26419",
+              "background": "#fef5f0"
+            },
+            fontFamily: {
+              headline: ["Epilogue"],
+              body: ["Manrope"],
+              label: ["Manrope"]
+            },
+            borderRadius: { DEFAULT: "1rem", lg: "2rem", xl: "3rem", full: "9999px" }
+          }
+        }
+      };
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24;
+      }
+      body {
+        background-color: #fef5f0;
+        color: #322e2b;
+        font-family: "Manrope", sans-serif;
+        overflow-x: hidden;
+      }
+      .hero-gradient {
+        background: linear-gradient(135deg, #a03b00 0%, #ff793b 100%);
+      }
+      .glass-nav {
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+      }
+    </style>
+  </head>
+  <body class="selection:bg-primary-container selection:text-on-primary-container">
+    <nav class="fixed top-0 z-50 w-full bg-surface/80 glass-nav">
+      <div class="mx-auto flex w-full max-w-screen-2xl items-center justify-between px-8 py-6">
+        <div class="flex flex-1 items-center gap-12">
+          <a class="font-headline text-2xl font-black tracking-tighter text-orange-950" href="index.html">ETHEREAL SOLSTICE</a>
+          <div class="hidden items-center gap-8 md:flex">
+            <a class="font-headline text-sm uppercase tracking-tight text-orange-900/60 transition-colors duration-300 hover:text-orange-700" href="#collections">Couture Collections</a>
+            <a class="font-headline text-sm uppercase tracking-tight text-orange-900/60 transition-colors duration-300 hover:text-orange-700" href="our-story.html">The Journal</a>
+            <a class="font-headline text-sm uppercase tracking-tight text-orange-900/60 transition-colors duration-300 hover:text-orange-700" href="our-story.html">Ancestral Heritage</a>
+            <a class="font-headline text-sm uppercase tracking-tight text-orange-900/60 transition-colors duration-300 hover:text-orange-700" href="our-story.html">Ethical Craft</a>
+          </div>
+        </div>
+        <div class="flex items-center gap-6">
+          <a class="hidden rounded-full bg-primary px-6 py-2 font-headline text-sm uppercase tracking-widest text-on-primary transition-all hover:bg-primary-dim active:scale-95 lg:flex" href="product.html">The Atelier</a>
+          <a class="p-2 text-orange-900 transition-colors hover:text-orange-700" href="checkout.html">
+            <span class="material-symbols-outlined">shopping_bag</span>
+          </a>
+          <a class="p-2 text-orange-900 md:hidden" href="orders.html">
+            <span class="material-symbols-outlined">menu</span>
+          </a>
+        </div>
+      </div>
+    </nav>
+    <main>
+      <section class="relative flex min-h-screen items-center justify-center overflow-hidden pt-20">
+        <div class="absolute inset-0 z-0 scale-105">
+          <img
+            alt="High-end editorial modest fashion photography"
+            class="h-full w-full object-cover brightness-90"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFq-AYjfjCxN-0i1GGqpL5A2mnk6BzHzOMuyTrGcqGLJtdlxWE0XkoQZv55UwB1kCDiuLRXVuh7tqDnOc1dDBKyWJqoL2v44wa0pZIeDC0y9exn_ZGZeMXJ6MV1XmquUsMyYjFqOnX8Pk3PYXrwKKGTM-bgNZIYeiz6R8xdgb9n3tPtV2mCtMfxjAAfo116g1VI6L7-f4WzmLmKuFJeOzVlyTmlYzdH3EDF1bhLgUBOjOC5LtuYj7uHdbYh9SDlIjatILHcp2ueL4Q"
+          />
+          <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-surface/40"></div>
+        </div>
+        <div class="relative z-10 px-4 text-center">
+          <span class="label-md mb-6 block font-headline font-light uppercase tracking-[0.4em] text-on-surface-variant">The Atelier of Ethereal Solstice</span>
+          <h1 class="mb-8 font-headline text-7xl font-black leading-[0.85] tracking-tighter text-orange-950 md:text-9xl">
+            THE RADIANT <br /> DUSK
+          </h1>
+          <div class="mt-12 flex flex-col items-center justify-center gap-6 md:flex-row">
+            <a class="group flex items-center gap-4 rounded-full bg-primary px-10 py-5 font-headline text-sm uppercase tracking-widest text-on-primary transition-all hover:bg-primary-dim" href="product.html">
+              Explore the Archives
+              <span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+        <div class="absolute bottom-12 left-1/2 -translate-x-1/2 animate-bounce opacity-40">
+          <span class="material-symbols-outlined text-3xl">south</span>
+        </div>
+      </section>
+      <section class="bg-surface px-8 py-24 md:py-48" id="collections">
+        <div class="mx-auto max-w-screen-2xl">
+          <div class="mb-24 flex flex-col justify-between gap-8 md:flex-row md:items-end">
+            <div class="max-w-xl">
+              <span class="label-md mb-4 block font-bold uppercase tracking-widest text-primary">Curation Series</span>
+              <h2 class="font-headline text-5xl font-bold leading-tight tracking-tight text-on-surface md:text-6xl">Mastering the Art of Modest Drapery</h2>
+            </div>
+            <p class="mb-2 max-w-sm font-body text-lg text-on-surface-variant">
+              A masterclass in ancestral weaving and contemporary tailoring. Each Abaya is a testament to longevity and the profound dignity of modest grace.
+            </p>
+          </div>
+          <div class="grid grid-cols-1 gap-10 md:grid-cols-12">
+            <a class="group cursor-pointer md:col-span-7" href="product.html">
+              <div class="relative aspect-[4/5] overflow-hidden rounded-lg bg-surface-container">
+                <img alt="Terracotta Series modest Abaya" class="h-full w-full object-cover transition-transform duration-1000 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8HayE8wuws_cuP6coe8uOgNUDvMuHp4uC6ILqLURngkWIb5j1Prgg2xBBt3vnGuFV0LrymHm44MYfVaIag9Be2QBilmSJl3bKEjf9K9LUeP7allqgWJEA8LkrwWAW8mPiKMcfSxlhJrHKdaVLGitNI1bIFS2UUc_OboND3bIYriUsiVaIgLciFPEwnjYoV1ata_rnz2vRmvffx6ikZUb9prqNejRo8A1hqivFLhTGqtKseKwunvSiw4XTxFpHoB_ThWqgBmj5NFpb" />
+                <div class="absolute inset-0 bg-black/10 transition-colors duration-500 group-hover:bg-black/0"></div>
+              </div>
+              <div class="mt-8 flex items-start justify-between">
+                <div>
+                  <h3 class="font-headline text-3xl font-bold text-on-surface">The Terracotta Heritage</h3>
+                  <p class="mt-2 font-body italic text-on-surface-variant">Earth-born elegance inspired by Sienese landscapes. Artisanal Organic Linen.</p>
+                </div>
+                <span class="material-symbols-outlined mt-1 text-4xl text-primary">arrow_outward</span>
+              </div>
+            </a>
+            <a class="group cursor-pointer md:col-span-5 md:mt-24" href="product.html">
+              <div class="relative aspect-[3/4] overflow-hidden rounded-lg bg-surface-container">
+                <img alt="Radiant Sunset Silk Abaya" class="h-full w-full object-cover transition-transform duration-1000 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQJ4Y45aOVm8UjkBb3QNqDfvoHyNrGUPsFww2VKlLuwjWH1F3Ze38WArHA8bwX2atIeAcRBUgwRPXGJmIvf4BMfFFgX3owNtdIYcJcM34xsoqOE4yZP4OZOxb35sehPZMmImZp8Iwl2rFWRyHD3VNQUe9uvrjvs8-ZzwimozYGdyYzlvFdd_mhPfjG8Gj7e2NsiO54S2LsydTFfykneQ4mDkDT1heERHFPhzZgTKiFmH8cUXqgtU_d64csnVt5L_Zl6eo7N2UZ4nVp" />
+                <div class="absolute inset-0 bg-black/10 transition-colors duration-500 group-hover:bg-black/0"></div>
+              </div>
+              <div class="mt-8 flex items-start justify-between">
+                <div>
+                  <h3 class="font-headline text-3xl font-bold text-on-surface">Radiant Sunset Silk</h3>
+                  <p class="mt-2 font-body italic text-on-surface-variant">Celestial movement. Fine Italian Mulberry Silk.</p>
+                </div>
+                <span class="material-symbols-outlined mt-1 text-4xl text-primary">arrow_outward</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+      <section class="bg-surface-container-low px-8 py-24">
+        <div class="mx-auto max-w-6xl">
+          <div class="hero-gradient relative overflow-hidden rounded-lg p-12 text-center md:p-24">
+            <div class="absolute inset-0 opacity-20">
+              <img alt="Premium fabric texture" class="h-full w-full object-cover mix-blend-overlay" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2yySH47kV1qstrllopri0XPSJ2obcUcemQj-gDMkPmqKIMejH9mQvRjs8Pb29175JCHno3DqIo_9Mwj0PsvpcCkp7h4IEkIreSZOO5lqetLhRDNsXh7V4pLPETEPxaREZL1JDUxkZV_JnkWVzIpfxq_p_I-WpzSe200YNBoQA2KmoRvJN2P46LMNZUsWpPjPqt2ZEGAIusuP24PpqbxI4x19AXnrn63FeYSs6hZtLhouM-ZxYYA-PmbXIbjsEI-ZT2hXmGLyerzBr" />
+            </div>
+            <div class="relative z-10 mx-auto max-w-2xl">
+              <span class="label-md mb-8 block font-headline uppercase tracking-[0.5em] text-on-primary">The Narrative</span>
+              <h2 class="mb-10 font-headline text-4xl font-black leading-none tracking-tighter text-on-primary md:text-7xl">A LEGACY CRAFTED FOR THE RADIANT FUTURE</h2>
+              <p class="mb-12 font-body text-xl leading-relaxed text-on-primary opacity-90">
+                Ethereal Solstice transcends standard boutique experiences; it is a sacred commitment to the rhythm of nature and the integrity of artisanal lineage. Every stitch honors the legacy of modest luxury.
+              </p>
+              <a class="inline-block rounded-full bg-surface px-12 py-5 font-headline text-sm font-bold uppercase tracking-[0.2em] text-primary shadow-xl transition-transform hover:scale-105 active:scale-95" href="our-story.html">Our Ancestral Heritage</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="bg-surface px-8 py-32">
+        <div class="mx-auto max-w-screen-2xl">
+          <div class="mb-24 text-center">
+            <h2 class="mb-4 font-headline text-4xl font-bold text-on-surface md:text-5xl">Masterpiece Silhouettes</h2>
+            <div class="mx-auto h-1 w-24 bg-primary"></div>
+          </div>
+          <div class="grid grid-cols-1 gap-x-8 gap-y-20 md:grid-cols-3">
+            <a class="group" href="product.html">
+              <div class="relative mb-6 aspect-[4/5] overflow-hidden rounded-md bg-surface-container">
+                <img alt="The Solstice Abaya" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCO77RUh1hC_O7Vkk1kM0dPfobzkwZCCiZ5dFCNdy2RniRQDJYj3tvwJnvBpftSUJGnirmN06_iRHtVKti0DoqaBafNkS0FalxDRqPp_115zvNmyiSKgwAsxoFmRV-6og0Yp7z0jhg4V3xMS2O_5Q3uGStedzNWCERvl6xpiRTuakX19zNeosgHGwbglxmuCz7tlHd3SrKKOSMR7VGtaLAnPuH5-EZvwD65Jq4qIuqGMgGNnOHwQwzNqBjSjcwnYSVXxz1Fr8R0BVHG" />
+                <span class="absolute bottom-6 left-1/2 -translate-x-1/2 translate-y-12 whitespace-nowrap rounded-full bg-surface/90 px-8 py-3 text-sm font-bold uppercase tracking-widest text-on-surface opacity-0 backdrop-blur-md transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">Request Private Viewing</span>
+              </div>
+              <div class="space-y-1">
+                <h4 class="font-headline text-xl font-bold">The Solstice Abaya</h4>
+                <p class="font-body text-on-surface-variant">Terracotta Fine Wool</p>
+                <p class="mt-2 text-primary font-bold">$1,240</p>
+              </div>
+            </a>
+            <a class="group md:mt-12" href="product.html">
+              <div class="relative mb-6 aspect-[4/5] overflow-hidden rounded-md bg-surface-container">
+                <img alt="The Dusk Over-coat" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNuhOP6uiuXsYIokQVOAaxZkklEh4Ej_65YVh4jUfAhwKGjt67ldAPfY75y_1KNbFa419T0UrjJP0U3DjRIvSHqRC2baxUmpd-bF57YrELnQ6l1Qs4N-442ophOlzVqDSKknWRfH7USlYcwB3DZQVinDW2PcD__9Y8Lyxcp5EzTBfnSNHCX9XiGe2LU5ThBEx6pHyb36I8QcPCboVJvbyYG2zhuixBJGqTwmKfL4ZQxt-NJW-pffY9Rjad3_i6XxN_TrakJYpi0Q-N" />
+                <span class="absolute bottom-6 left-1/2 -translate-x-1/2 translate-y-12 whitespace-nowrap rounded-full bg-surface/90 px-8 py-3 text-sm font-bold uppercase tracking-widest text-on-surface opacity-0 backdrop-blur-md transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">Request Private Viewing</span>
+              </div>
+              <div class="space-y-1">
+                <h4 class="font-headline text-xl font-bold">The Dusk Over-coat</h4>
+                <p class="font-body text-on-surface-variant">Structured Cotton Twill</p>
+                <p class="mt-2 text-primary font-bold">$980</p>
+              </div>
+            </a>
+            <a class="group" href="product.html">
+              <div class="relative mb-6 aspect-[4/5] overflow-hidden rounded-md bg-surface-container">
+                <img alt="Celestial Silk Wrap" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsNoEz4dnfreHvyJAqKsM70mKkN7yG3uww4aDrPiz---vaLpYHNVR10A58dLo8I3f4dv1Fe4X-p-C4sO5WwcBuf5vo72JkPbCLPbB2fgHcX4DDEtfiSE3S0MLb-ZYPgJyCoQUUgd4kMlO_Yw919-aibDy-1g-AmS7Rr6tIVh5FNmaQyS_b8eYaufD3lw-cDcZ5Zgyz-yp0qF903kEa3MwBI7o9x2TygmlSdxZApidgWr038kxil3y7zaFwUizLnz2E1XiVHR-iSNQO" />
+                <span class="absolute bottom-6 left-1/2 -translate-x-1/2 translate-y-12 whitespace-nowrap rounded-full bg-surface/90 px-8 py-3 text-sm font-bold uppercase tracking-widest text-on-surface opacity-0 backdrop-blur-md transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">Request Private Viewing</span>
+              </div>
+              <div class="space-y-1">
+                <h4 class="font-headline text-xl font-bold">Celestial Silk Wrap</h4>
+                <p class="font-body text-on-surface-variant">Artisanal Mulberry Silk</p>
+                <p class="mt-2 text-primary font-bold">$450</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="bg-orange-50 pb-12 pt-24">
+      <div class="mx-auto grid max-w-screen-2xl grid-cols-1 gap-12 px-12 md:grid-cols-4">
+        <div>
+          <a class="mb-6 block font-headline text-xl font-bold text-orange-900" href="index.html">ETHEREAL SOLSTICE</a>
+          <p class="mb-8 text-sm leading-relaxed text-orange-900/70">
+            Consciously curated for the global soul. Our atelier prioritizes low-impact manufacturing and honors artisanal legacy through refined, modest design.
+          </p>
+          <div class="flex gap-6">
+            <a class="text-orange-900 transition-all hover:text-orange-600" href="#"><span class="material-symbols-outlined">share</span></a>
+            <a class="text-orange-900 transition-all hover:text-orange-600" href="#"><span class="material-symbols-outlined">mail</span></a>
+          </div>
+        </div>
+        <div>
+          <h4 class="mb-6 font-headline text-xs font-bold uppercase tracking-wider text-orange-900">Atelier Navigation</h4>
+          <ul class="space-y-4 text-sm text-orange-900/70">
+            <li><a class="transition-all hover:text-orange-600" href="index.html#collections">Couture Collections</a></li>
+            <li><a class="transition-all hover:text-orange-600" href="our-story.html">The Journal</a></li>
+            <li><a class="transition-all hover:text-orange-600" href="our-story.html">Ancestral Heritage</a></li>
+            <li><a class="transition-all hover:text-orange-600" href="our-story.html">Ethical Craft</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="mb-6 font-headline text-xs font-bold uppercase tracking-wider text-orange-900">Concierge</h4>
+          <ul class="space-y-4 text-sm text-orange-900/70">
+            <li><a class="transition-all hover:text-orange-600" href="checkout.html">Privacy &amp; Data</a></li>
+            <li><a class="transition-all hover:text-orange-600" href="checkout.html">Terms of Boutique</a></li>
+            <li><a class="transition-all hover:text-orange-600" href="checkout.html">White Glove Delivery</a></li>
+            <li><a class="transition-all hover:text-orange-600" href="orders.html">Private Wholesale</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="mb-6 font-headline text-xs font-bold uppercase tracking-wider text-orange-900">The Inner Circle</h4>
+          <p class="mb-6 text-sm text-orange-900/70">Join our circle for seasonal previews and deep editorial insights.</p>
+          <form class="flex gap-2">
+            <input class="w-full rounded-full border-none bg-surface-container-high px-6 py-3 text-sm focus:ring-2 focus:ring-primary/40" placeholder="atelier@residence.com" type="email" />
+            <button class="rounded-full bg-primary p-3 text-on-primary transition-all hover:bg-primary-dim active:scale-95" type="submit">
+              <span class="material-symbols-outlined">send</span>
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="mx-auto mt-24 flex max-w-screen-2xl flex-col items-center justify-between gap-6 border-t border-orange-100 px-12 pt-12 md:flex-row">
+        <p class="text-sm text-orange-900/70">© 2024 Ethereal Solstice. All rights reserved. Consciously crafted for the global soul.</p>
+        <div class="flex gap-8">
+          <a class="text-xs uppercase tracking-widest text-orange-900/50 hover:text-orange-900" href="#">Instagram</a>
+          <a class="text-xs uppercase tracking-widest text-orange-900/50 hover:text-orange-900" href="#">Pinterest</a>
+          <a class="text-xs uppercase tracking-widest text-orange-900/50 hover:text-orange-900" href="#">Vimeo</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

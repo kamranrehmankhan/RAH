@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Order History | ETHEREAL SOLSTICE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#F26419",
+              secondary: "#9E4221",
+              background: "#FFFBF7",
+              surface: "#FFFBF7",
+              "surface-container-lowest": "#FFFFFF",
+              "surface-container-low": "#F9F3EE",
+              "surface-container": "#F5EBE2",
+              "surface-container-high": "#EFE0D4",
+              "surface-container-highest": "#E9D6C6",
+              "on-surface": "#2D1B14",
+              "on-surface-variant": "#5C463D",
+              outline: "#85736B",
+              "outline-variant": "#D8C5BC",
+              "primary-container": "#FFDBCB",
+              "on-primary-container": "#341100"
+            },
+            fontFamily: {
+              headline: ["Epilogue", "sans-serif"],
+              body: ["Epilogue", "sans-serif"],
+              label: ["Epilogue", "sans-serif"]
+            },
+            borderRadius: {
+              DEFAULT: "9999px",
+              lg: "9999px",
+              xl: "9999px",
+              full: "9999px"
+            }
+          }
+        }
+      };
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+      }
+      body {
+        background-color: #fffbf7;
+        color: #2d1b14;
+        font-family: "Epilogue", sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+      .editorial-shadow {
+        box-shadow: 0 30px 60px -12px rgba(45, 27, 20, 0.08);
+      }
+      .hover-lift {
+        transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .hover-lift:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 40px 80px -15px rgba(158, 66, 33, 0.12);
+      }
+      .img-overlay {
+        background: linear-gradient(to bottom, transparent 0%, rgba(45, 27, 20, 0.2) 100%);
+      }
+    </style>
+  </head>
+  <body class="bg-surface text-on-surface">
+    <nav class="fixed top-0 z-50 w-full border-b border-outline-variant/20 bg-background/90 backdrop-blur-2xl transition-all duration-500">
+      <div class="mx-auto flex w-full max-w-[1920px] items-center justify-between px-8 py-6 md:px-16">
+        <a class="font-headline text-2xl font-extrabold tracking-tighter text-primary" href="index.html">Ethereal Solstice</a>
+        <div class="hidden items-center space-x-14 font-body text-on-surface lg:flex">
+          <a class="text-sm font-semibold uppercase tracking-widest text-on-surface/80 transition-all hover:text-primary" href="index.html">Collections</a>
+          <a class="text-sm font-semibold uppercase tracking-widest text-on-surface/80 transition-all hover:text-primary" href="product.html">New Arrivals</a>
+          <a class="text-sm font-semibold uppercase tracking-widest text-on-surface/80 transition-all hover:text-primary" href="checkout.html">Boutique</a>
+          <a class="text-sm font-semibold uppercase tracking-widest text-on-surface/80 transition-all hover:text-primary" href="our-story.html">Journal</a>
+        </div>
+        <div class="flex items-center space-x-8">
+          <a class="flex items-center text-on-surface transition-colors hover:text-primary" href="checkout.html"><span class="material-symbols-outlined">shopping_bag</span></a>
+          <a class="group flex items-center gap-2" href="orders.html">
+            <span class="hidden text-sm font-bold uppercase tracking-widest text-on-surface md:inline">Profile</span>
+            <span class="material-symbols-outlined text-primary transition-transform group-hover:scale-110">account_circle</span>
+          </a>
+        </div>
+      </div>
+    </nav>
+    <main class="mx-auto min-h-screen max-w-[1600px] px-6 pb-32 pt-40 md:px-16">
+      <header class="mb-24 flex flex-col justify-between gap-8 md:flex-row md:items-end">
+        <div class="max-w-3xl">
+          <span class="mb-6 block font-label text-[11px] font-bold uppercase tracking-[0.4em] text-secondary">Personal Archive</span>
+          <h1 class="font-headline text-6xl font-extrabold leading-[0.85] tracking-tight text-on-surface md:text-9xl">Acquisitions</h1>
+          <p class="mt-10 text-xl font-light leading-relaxed text-on-surface-variant md:text-2xl">
+            A curated record of your journey through modest luxury. Manage your past selections and track current arrivals in the glow of the <span class="font-medium italic text-primary">Radiant Sunset</span>.
+          </p>
+        </div>
+        <div class="flex flex-col items-start gap-2 md:items-end">
+          <span class="text-xs font-bold uppercase tracking-widest text-outline">Total Orders</span>
+          <span class="font-headline text-4xl font-extrabold text-on-surface">12</span>
+        </div>
+      </header>
+      <div class="mb-20 flex flex-col items-center justify-between gap-6 rounded-[3rem] border border-outline-variant/10 bg-surface-container-low p-4 xl:flex-row">
+        <div class="relative w-full xl:w-[500px]">
+          <input class="w-full rounded-full border-none bg-white px-10 py-5 font-body placeholder:text-on-surface-variant/40 shadow-sm focus:ring-2 focus:ring-primary/20" placeholder="Search by Order ID or Collection name..." type="text" />
+          <span class="material-symbols-outlined absolute right-8 top-1/2 -translate-y-1/2 text-primary">search</span>
+        </div>
+        <div class="flex w-full gap-3 overflow-x-auto pb-2 xl:w-auto xl:pb-0">
+          <button class="whitespace-nowrap rounded-full bg-primary px-10 py-4 font-label text-xs font-bold uppercase tracking-widest text-white shadow-lg shadow-primary/20">All Archives</button>
+          <button class="whitespace-nowrap rounded-full border border-outline-variant/30 bg-white px-10 py-4 font-label text-xs font-bold uppercase tracking-widest text-on-surface-variant transition-colors hover:bg-primary/5">In Processing</button>
+          <button class="whitespace-nowrap rounded-full border border-outline-variant/30 bg-white px-10 py-4 font-label text-xs font-bold uppercase tracking-widest text-on-surface-variant transition-colors hover:bg-primary/5">In Transit</button>
+          <button class="whitespace-nowrap rounded-full border border-outline-variant/30 bg-white px-10 py-4 font-label text-xs font-bold uppercase tracking-widest text-on-surface-variant transition-colors hover:bg-primary/5">Delivered</button>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 gap-12 lg:grid-cols-2">
+        <div class="hover-lift editorial-shadow overflow-hidden rounded-[3rem] border border-outline-variant/10 bg-surface-container-lowest">
+          <div class="flex h-full flex-col sm:flex-row">
+            <div class="relative min-h-[350px] w-full sm:w-2/5">
+              <img class="h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhRahDp8RjVdxNAr1kPNcPLqNhFJ5BkZifkyR-gE-vpddjpLWEUcCmj9jo3wWMuV8tr9U3b2AaQ0OKdxda72LP4ZPgkkq6tdz1NGY6M4WbbX0xWM9ItzhlCBap6WOQ4S2sOD9ACwYYeR127EJQ1qpqmsQnxa4JFlKvwPGtX3rZEIcyFIegN2Ljg52N1L8jaq2KcWXkD4tzngv3C-bQb_Uc6iNpuguXRExTf4G-_SulGTRJs2wxffRqHS0Ckrmepv_cfohVEMEzKueu" alt="Display of an Abaya from the Rose Petal Collection" />
+              <div class="img-overlay absolute inset-0"></div>
+              <div class="absolute left-8 top-8">
+                <span class="rounded-full bg-white/90 px-4 py-1.5 text-[10px] font-bold uppercase tracking-widest text-secondary shadow-sm backdrop-blur-md">Delivered</span>
+              </div>
+            </div>
+            <div class="flex w-full flex-col justify-between p-10 sm:w-3/5">
+              <div>
+                <div class="mb-6 flex items-start justify-between">
+                  <span class="text-[10px] font-bold uppercase tracking-[0.25em] text-outline">ID: ES-94821</span>
+                  <span class="text-[10px] font-bold uppercase tracking-widest text-primary">Oct 14, 2024</span>
+                </div>
+                <h3 class="mb-3 font-headline text-3xl font-extrabold leading-tight text-on-surface">The Rose Petal Collection</h3>
+                <p class="text-sm leading-relaxed text-on-surface-variant">A custom-tailored selection comprising 3 premium silk pieces for the modern wardrobe.</p>
+              </div>
+              <div class="mt-8 flex items-end justify-between">
+                <div>
+                  <span class="mb-1 block text-[9px] font-bold uppercase tracking-[0.2em] text-outline">Acquisition Value</span>
+                  <span class="font-headline text-3xl font-extrabold text-secondary">$1,240.00</span>
+                </div>
+                <a class="flex h-12 w-12 items-center justify-center rounded-full border border-primary/20 text-primary transition-all duration-500 hover:bg-primary hover:text-white" href="product.html"><span class="material-symbols-outlined">arrow_forward</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="hover-lift editorial-shadow overflow-hidden rounded-[3rem] border border-outline-variant/10 bg-surface-container-lowest">
+          <div class="flex h-full flex-col sm:flex-row">
+            <div class="relative min-h-[350px] w-full sm:w-2/5">
+              <img class="h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKpMGwjKUpvL5eCJIvK06n4hYm84dehNRvQBqwIifUha7iI2MDX2dHz1dncBUdRT6_P9RArRDVzjMT4L3BwVnvMAAt1COmGF3DYqWje3IpSxhBbfOj846NFlReCxK3ORD4qb-g07JN8XK62lAvyLRlDMQ0hknS7H7q1nwyKe7cE_NejxSaH3mVSPp4KUKLEodnL1aKUe9aeOAt1ujyjm0PqLS28UmznJOUO-116iQRRjZcPnUO3N1Nj583qAjc74BZhf2IFqJu2fAr" alt="Fabric texture representing the Essential Blouse" />
+              <div class="img-overlay absolute inset-0"></div>
+              <div class="absolute left-8 top-8">
+                <span class="animate-pulse rounded-full bg-primary px-4 py-1.5 text-[10px] font-bold uppercase tracking-widest text-white shadow-lg">In Transit</span>
+              </div>
+            </div>
+            <div class="flex w-full flex-col justify-between p-10 sm:w-3/5">
+              <div>
+                <div class="mb-6 flex items-start justify-between">
+                  <span class="text-[10px] font-bold uppercase tracking-[0.25em] text-outline">ID: ES-94705</span>
+                  <span class="text-[10px] font-bold uppercase tracking-widest text-primary">Oct 28, 2024</span>
+                </div>
+                <h3 class="mb-3 font-headline text-3xl font-extrabold leading-tight text-on-surface">Essential Silk Blouse</h3>
+                <p class="text-sm leading-relaxed text-on-surface-variant">Single artisanal piece. Estimated arrival scheduled for tomorrow by sunset.</p>
+              </div>
+              <div class="mt-8 flex items-end justify-between">
+                <div>
+                  <span class="mb-1 block text-[9px] font-bold uppercase tracking-[0.2em] text-outline">Acquisition Value</span>
+                  <span class="font-headline text-3xl font-extrabold text-secondary">$350.00</span>
+                </div>
+                <a class="flex h-12 w-12 items-center justify-center rounded-full border border-primary/20 text-primary transition-all duration-500 hover:bg-primary hover:text-white" href="checkout.html"><span class="material-symbols-outlined">arrow_forward</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
