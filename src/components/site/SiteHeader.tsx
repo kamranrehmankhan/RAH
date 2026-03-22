@@ -29,44 +29,30 @@ export default function SiteHeader({locale}: {locale: Locale}) {
   }
 
   return (
-    <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/70 backdrop-blur dark:border-slate-800 dark:bg-slate-950/70">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3">
-        <div className="flex items-center gap-4">
-          <Link href={`/${locale}`} className="font-semibold tracking-tight">
-            {t('brand')}
+    <header style={{ backgroundColor: 'rgba(254,245,240,0.92)', borderBottom: '1px solid #e5dbd5', position: 'sticky', top: 0, zIndex: 40, backdropFilter: 'blur(20px)' }}>
+      <div className="mx-auto flex max-w-screen-xl items-center justify-between gap-3 px-8 py-5">
+        <div className="flex items-center gap-12">
+          <Link href={`/${locale}`} style={{ fontFamily: 'Georgia, serif', fontWeight: 900, fontSize: '1.1rem', letterSpacing: '-0.02em', color: '#431407', textDecoration: 'none' }}>
+            ETHEREAL SOLSTICE
           </Link>
-
-          <nav className="hidden items-center gap-5 md:flex">
-            <Link
-              href={`/${locale}/collections`}
-              className="text-sm font-medium text-slate-700 hover:text-slate-900 dark:text-slate-200 dark:hover:text-white"
-            >
-              {t('nav.collections')}
+          <nav className="hidden items-center gap-8 md:flex">
+            <Link href={`/${locale}/collections`} style={{ fontFamily: 'Georgia, serif', fontSize: '0.7rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#605a57', textDecoration: 'none' }} className="hover:text-orange-700 transition-colors">
+              Collections
             </Link>
-            <Link
-              href={`/${locale}/products`}
-              className="text-sm font-medium text-slate-700 hover:text-slate-900 dark:text-slate-200 dark:hover:text-white"
-            >
-              {t('nav.products')}
+            <Link href={`/${locale}/products`} style={{ fontFamily: 'Georgia, serif', fontSize: '0.7rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#605a57', textDecoration: 'none' }} className="hover:text-orange-700 transition-colors">
+              Products
             </Link>
-            <Link
-              href={`/${locale}/quote`}
-              className="text-sm font-medium text-slate-700 hover:text-slate-900 dark:text-slate-200 dark:hover:text-white"
-            >
-              {t('nav.quote')}
+            <Link href={`/${locale}/quote`} style={{ fontFamily: 'Georgia, serif', fontSize: '0.7rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#605a57', textDecoration: 'none' }} className="hover:text-orange-700 transition-colors">
+              Request a Quote
             </Link>
-            <Link
-              href={`/${locale}/admin/login`}
-              className="text-sm font-medium text-slate-700 hover:text-slate-900 dark:text-slate-200 dark:hover:text-white"
-            >
-              {t('nav.admin')}
+            <Link href={`/${locale}/about`} style={{ fontFamily: 'Georgia, serif', fontSize: '0.7rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#605a57', textDecoration: 'none' }} className="hover:text-orange-700 transition-colors">
+              Our Story
             </Link>
           </nav>
         </div>
-
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-4">
           <select
-            className="rounded-md border border-slate-200 bg-white px-2 py-1 text-sm outline-none dark:border-slate-800 dark:bg-slate-900 dark:text-slate-50"
+            style={{ borderRadius: '9999px', border: '1px solid #e5dbd5', backgroundColor: 'transparent', padding: '4px 12px', fontSize: '0.75rem', color: '#605a57', outline: 'none' }}
             value={locale}
             onChange={(e) => onLocaleChange(e.target.value as Locale)}
             aria-label="Language"
@@ -82,4 +68,3 @@ export default function SiteHeader({locale}: {locale: Locale}) {
     </header>
   )
 }
-
