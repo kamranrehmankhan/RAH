@@ -3,9 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Secure Checkout | ETHEREAL SOLSTICE</title>
+    <title>RAH | Checkout</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
     <script id="tailwind-config">
       tailwind.config = {
@@ -13,32 +12,32 @@
         theme: {
           extend: {
             colors: {
-              primary: "#F26419",
-              "on-primary": "#ffffff",
-              "primary-container": "#FFDBCB",
-              "on-primary-container": "#341100",
-              secondary: "#8B4513",
-              "on-secondary": "#ffffff",
-              "secondary-container": "#FFDBCB",
-              tertiary: "#DAA520",
-              "on-tertiary": "#ffffff",
-              background: "#FFFBF7",
-              "on-background": "#241A14",
-              surface: "#FFFBF7",
-              "on-surface": "#241A14",
-              "surface-variant": "#F4E0D6",
-              "on-surface-variant": "#52443C",
-              outline: "#85736B",
-              "outline-variant": "#D7C2B9",
-              "surface-container-low": "#FEF1E9",
-              "surface-container-high": "#F8E9E1",
-              "surface-container-highest": "#F2E2D9",
-              "surface-container-lowest": "#FFFFFF"
+              primary: "#111827",
+              "on-primary": "#f9fafb",
+              "primary-container": "#e5e7eb",
+              "on-primary-container": "#111827",
+              secondary: "#374151",
+              "on-secondary": "#f9fafb",
+              "secondary-container": "#e5e7eb",
+              tertiary: "#6b7280",
+              "on-tertiary": "#f9fafb",
+              background: "#f3f4f6",
+              "on-background": "#111827",
+              surface: "#ffffff",
+              "on-surface": "#111827",
+              "surface-variant": "#e5e7eb",
+              "on-surface-variant": "#6b7280",
+              outline: "#9ca3af",
+              "outline-variant": "#d1d5db",
+              "surface-container-low": "#f9fafb",
+              "surface-container-high": "#e5e7eb",
+              "surface-container-highest": "#d1d5db",
+              "surface-container-lowest": "#ffffff"
             },
             fontFamily: {
-              headline: ["Epilogue", "sans-serif"],
-              body: ["Epilogue", "sans-serif"],
-              label: ["Epilogue", "sans-serif"]
+              headline: ['-apple-system', 'BlinkMacSystemFont', '"SF Pro Text"', '"Segoe UI"', "sans-serif"],
+              body: ['-apple-system', 'BlinkMacSystemFont', '"SF Pro Text"', '"Segoe UI"', "sans-serif"],
+              label: ['-apple-system', 'BlinkMacSystemFont', '"SF Pro Text"', '"Segoe UI"', "sans-serif"]
             },
             borderRadius: { DEFAULT: "2rem", lg: "2.5rem", xl: "4rem", full: "9999px" }
           }
@@ -50,13 +49,13 @@
         font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24;
       }
       body {
-        background-color: #fffbf7;
-        color: #241a14;
-        font-family: "Epilogue", sans-serif;
+        background-color: #f3f4f6;
+        color: #111827;
+        font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
         letter-spacing: -0.01em;
       }
       .editorial-shadow {
-        box-shadow: 0 40px 80px rgba(139, 69, 19, 0.06);
+        box-shadow: 0 30px 70px rgba(17, 24, 39, 0.08);
       }
       input::placeholder {
         color: rgba(82, 68, 60, 0.3);
@@ -66,7 +65,7 @@
   <body class="bg-background text-on-background selection:bg-primary-container selection:text-on-primary-container">
     <nav class="fixed top-0 z-50 flex h-20 w-full items-center justify-center border-b border-outline-variant/20 bg-background/90 px-8 backdrop-blur-xl md:h-24">
       <div class="flex w-full max-w-7xl items-center justify-between">
-        <a class="font-headline text-xl font-bold uppercase tracking-tighter text-on-surface md:text-2xl" href="index.html">ETHEREAL SOLSTICE</a>
+        <a class="font-headline text-xl font-bold uppercase tracking-[0.3em] text-on-surface md:text-2xl" href="index.html">R A H</a>
         <a class="group flex items-center gap-2 font-label text-[10px] uppercase tracking-[0.25em] text-on-surface-variant transition-all hover:text-primary" href="product.html">
           <span class="material-symbols-outlined text-sm transition-transform group-hover:-translate-x-1">arrow_back</span>
           Return to Cart
@@ -136,7 +135,7 @@
                 <input class="peer sr-only" name="delivery" type="radio" />
                 <div class="flex flex-col gap-2 rounded-[2.5rem] border border-outline-variant/20 bg-surface-container-low p-8 transition-all peer-checked:border-primary peer-checked:bg-surface-container-highest md:p-10">
                   <div class="flex items-center justify-between">
-                    <span class="font-headline text-lg font-bold">Dusk Priority</span>
+                    <span class="font-headline text-lg font-bold">Priority</span>
                     <span class="font-bold text-primary">$35.00</span>
                   </div>
                   <span class="text-sm italic text-on-surface-variant/60">Next Day Delivery</span>
@@ -164,7 +163,7 @@
                   <img alt="Radiant silk scarf" class="h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuASXaLRXuCKAfeMaQ0pi9pDJdGrBiqM11Sspc3fdM2qtUnpMVhq2GKo3umRzVqHC0e4nxLuyf-3ve_alvpXxmmkXa7y3JGUsfvTxYFQYodJXi51sGq3ojgmodyJZloR7MTKK2rDHwvRjROzRjFop9ULelCx0jhxQ8_p75jo_gB5ZjRqPl0rFG1q4uc1x78EzYiOp2-eTi-PdquT68hv0J680CRCtdXm8rR1EXk_ELFWMgR87DcxXpOHG6_Zq8sd_LojdjSb4gYawZeP" />
                 </div>
                 <div class="flex flex-grow flex-col justify-center">
-                  <h4 class="font-headline text-lg font-bold text-on-surface">Dusk Silk Scarf</h4>
+                  <h4 class="font-headline text-lg font-bold text-on-surface">Minimal Silk Scarf</h4>
                   <p class="mt-2 font-label text-[10px] font-bold uppercase tracking-[0.25em] text-on-surface-variant/50">Amber Dust / Universal Size</p>
                   <p class="mt-4 text-xl font-bold text-primary">$85.00</p>
                 </div>
